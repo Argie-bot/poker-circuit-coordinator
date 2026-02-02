@@ -6,8 +6,6 @@
 
 import { Tournament, Circuit, Venue } from '@/types';
 import { pokerAtlas } from './poker-atlas';
-import { wsopScraper } from '@/lib/scrapers/wsop-circuit';
-import { wptScraper } from '@/lib/scrapers/wpt';
 
 interface DataSourceHealth {
   name: string;
@@ -29,6 +27,23 @@ export class TournamentDataService {
   private cacheExpiryMinutes = 30; // Cache for 30 minutes
   private lastHealthCheck = new Date(0);
   private healthCheckIntervalMinutes = 5;
+
+  // Dynamic imports for server-only scrapers
+  private async getWSopScraper() {
+    if (typeof window !== 'undefined') {
+      throw new Error('WSOP scraper is not available on client side');
+    }
+    const { wsopScraper } = await import('@/lib/scrapers/wsop-circuit');
+    return wsopScraper;
+  }
+
+  private async getWPTScraper() {
+    if (typeof window !== 'undefined') {
+      throw new Error('WPT scraper is not available on client side');
+    }
+    const { wptScraper } = await import('@/lib/scrapers/wpt');
+    return wptScraper;
+  }
   
   private dataSourceHealth: DataSourceHealth[] = [
     {
@@ -214,13 +229,25 @@ export class TournamentDataService {
   }
 
   private async fetchWSopData(): Promise<Tournament[]> {
-    console.log('Fetching WSOP Circuit data...');
-    return await wsopScraper.getCircuitEvents();
+    try {
+      console.log('Fetching WSOP Circuit data...');
+      const wsopScraper = await this.getWSopScraper();
+      return await wsopScraper.getCircuitEvents();
+    } catch (error) {
+      console.error('Error fetching WSOP data:', error);
+      return [];
+    }
   }
 
   private async fetchWPTData(): Promise<Tournament[]> {
-    console.log('Fetching WPT data...');
-    return await wptScraper.getWPTEvents();
+    try {
+      console.log('Fetching WPT data...');
+      const wptScraper = await this.getWPTScraper();
+      return await wptScraper.getWPTEvents();
+    } catch (error) {
+      console.error('Error fetching WPT data:', error);
+      return [];
+    }
   }
 
   private async checkDataSourceHealth(): Promise<void> {
@@ -246,6 +273,7 @@ export class TournamentDataService {
 
     // Check WSOP Circuit
     try {
+      const wsopScraper = await this.getWSopScraper();
       const wsopAvailable = await wsopScraper.checkAvailability();
       this.updateSourceHealth('WSOP Circuit', wsopAvailable, wsopAvailable ? undefined : 'Website not accessible');
     } catch (error) {
@@ -254,6 +282,7 @@ export class TournamentDataService {
 
     // Check WPT
     try {
+      const wptScraper = await this.getWPTScraper();
       const wptAvailable = await wptScraper.checkAvailability();
       this.updateSourceHealth('WPT', wptAvailable, wptAvailable ? undefined : 'Website not accessible');
     } catch (error) {
@@ -390,8 +419,17 @@ export class TournamentDataService {
    * Cleanup resources when shutting down
    */
   async cleanup(): Promise<void> {
-    await wsopScraper.close();
-    await wptScraper.close();
+    try {
+      // Only cleanup scrapers if we're on server side
+      if (typeof window === 'undefined') {
+        const wsopScraper = await this.getWSopScraper();
+        const wptScraper = await this.getWPTScraper();
+        await wsopScraper.close();
+        await wptScraper.close();
+      }
+    } catch (error) {
+      console.error('Error during scraper cleanup:', error);
+    }
     this.clearCache();
   }
 }

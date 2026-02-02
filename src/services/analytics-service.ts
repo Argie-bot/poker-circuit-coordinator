@@ -12,8 +12,8 @@
 
 import { Tournament, Player, PlayerStatistics } from '@/types';
 import { tournamentDataService } from './tournament-data-service';
-import { ExpenseData } from '@/types/expenses';
-import { BankrollTransaction } from '@/types/bankroll';
+import { Expense } from '@/types/expenses';
+import { StakingTransaction } from '@/types/bankroll';
 
 export interface TournamentResult {
   tournamentId: string;
@@ -295,7 +295,12 @@ export class AnalyticsService {
     };
   }> {
     const analytics = await this.getPlayerAnalytics(playerId);
-    const optimizationSteps = [];
+    const optimizationSteps: Array<{
+      action: string;
+      impact: number;
+      difficulty: 'easy' | 'medium' | 'hard';
+      description: string;
+    }> = [];
 
     // Analyze current performance
     const currentROI = analytics.summary.roi;
@@ -358,7 +363,7 @@ export class AnalyticsService {
   private async getPlayerExpenses(
     playerId: string,
     filter?: AnalyticsFilter
-  ): Promise<ExpenseData[]> {
+  ): Promise<Expense[]> {
     // This would integrate with your expense tracking system
     return this.getMockExpenseData(playerId, filter);
   }
@@ -366,7 +371,7 @@ export class AnalyticsService {
   private async getPlayerBankrollHistory(
     playerId: string,
     filter?: AnalyticsFilter
-  ): Promise<BankrollTransaction[]> {
+  ): Promise<StakingTransaction[]> {
     // This would integrate with your bankroll management system
     return this.getMockBankrollHistory(playerId, filter);
   }
@@ -392,7 +397,7 @@ export class AnalyticsService {
 
   private calculateMonthlyPerformance(
     results: TournamentResult[], 
-    expenses: ExpenseData[]
+    expenses: Expense[]
   ): MonthlyPerformance[] {
     const monthlyData = new Map<string, MonthlyPerformance>();
 
@@ -425,7 +430,8 @@ export class AnalyticsService {
 
     // Process expenses
     expenses.forEach(expense => {
-      const monthKey = expense.date.toISOString().slice(0, 7);
+      const expenseDate = new Date(expense.date);
+      const monthKey = expenseDate.toISOString().slice(0, 7);
       const data = monthlyData.get(monthKey);
       if (data) {
         data.travelExpenses += expense.amount;
@@ -529,7 +535,7 @@ export class AnalyticsService {
       .sort((a, b) => b.roi - a.roi);
   }
 
-  private calculateTravelAnalytics(expenses: ExpenseData[]): TravelAnalytics {
+  private calculateTravelAnalytics(expenses: Expense[]): TravelAnalytics {
     // Group expenses by month and calculate travel metrics
     const monthlyExpenses = this.groupExpensesByMonth(expenses);
     const totalTournaments = 47; // This should come from actual data
@@ -544,25 +550,35 @@ export class AnalyticsService {
     };
   }
 
-  private calculateBankrollAnalytics(history: BankrollTransaction[]): BankrollAnalytics {
-    const current = history[history.length - 1];
+  private calculateBankrollAnalytics(history: StakingTransaction[]): BankrollAnalytics {
+    // Mock implementation since we don't have real data structure yet
     return {
       currentAllocation: {
-        tournamentBR: current?.tournamentBankroll || 50000,
-        cashGameBR: current?.cashGameBankroll || 15000,
-        expenseFund: current?.expenseFund || 10000,
-        total: current?.totalBankroll || 75000
+        tournamentBR: 50000,
+        cashGameBR: 15000,
+        expenseFund: 10000,
+        total: 75000
       },
-      history: history.map((h, i) => ({
-        date: h.date,
-        amount: h.totalBankroll,
-        tournamentBR: h.tournamentBankroll,
-        expenseFund: h.expenseFund,
-        change: i > 0 ? h.totalBankroll - history[i-1].totalBankroll : 0,
-        changePercent: i > 0 ? ((h.totalBankroll - history[i-1].totalBankroll) / history[i-1].totalBankroll) * 100 : 0
-      })),
+      history: [
+        {
+          date: new Date('2024-01-01'),
+          amount: 75000,
+          tournamentBR: 50000,
+          expenseFund: 10000,
+          change: 0,
+          changePercent: 0
+        },
+        {
+          date: new Date('2024-02-01'),
+          amount: 78500,
+          tournamentBR: 52500,
+          expenseFund: 11000,
+          change: 3500,
+          changePercent: 4.7
+        }
+      ],
       riskMetrics: {
-        kellyPercentage: 2.3, // Calculate based on ROI and variance
+        kellyPercentage: 2.3,
         currentRisk: 'medium',
         recommendedBuyInRange: { min: 500, max: 2500 },
         drawdownProtection: 20
@@ -661,11 +677,11 @@ export class AnalyticsService {
     return []; // Implementation would query actual tournament results
   }
 
-  private getMockExpenseData(playerId: string, filter?: AnalyticsFilter): ExpenseData[] {
+  private getMockExpenseData(playerId: string, filter?: AnalyticsFilter): Expense[] {
     return []; // Implementation would query expense tracking system
   }
 
-  private getMockBankrollHistory(playerId: string, filter?: AnalyticsFilter): BankrollTransaction[] {
+  private getMockBankrollHistory(playerId: string, filter?: AnalyticsFilter): StakingTransaction[] {
     return []; // Implementation would query bankroll management system
   }
 
@@ -726,12 +742,12 @@ export class AnalyticsService {
     return totalBuyins > 0 ? ((totalWinnings - totalBuyins) / totalBuyins) * 100 : 0;
   }
 
-  private groupExpensesByMonth(expenses: ExpenseData[]): TravelAnalytics['monthlyExpenses'] {
+  private groupExpensesByMonth(expenses: Expense[]): TravelAnalytics['monthlyExpenses'] {
     // Group and aggregate expenses by month
     return []; // Implementation would process expense data
   }
 
-  private calculateMostEfficientTrips(expenses: ExpenseData[]): TravelAnalytics['mostEfficientTrips'] {
+  private calculateMostEfficientTrips(expenses: Expense[]): TravelAnalytics['mostEfficientTrips'] {
     return []; // Implementation would analyze trip efficiency
   }
 

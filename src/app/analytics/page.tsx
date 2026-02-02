@@ -322,7 +322,7 @@ export default function AnalyticsPage() {
                   <div className="p-3 bg-green-50 rounded-lg">
                     <p className="text-sm font-medium text-green-900">🎯 Best Performance</p>
                     <p className="text-sm text-green-700">
-                      {bestCircuit.circuit} shows your highest ROI at {bestCircuit.roi}%
+                      {bestCircuit ? `${bestCircuit.circuit} shows your highest ROI at ${bestCircuit.roi}%` : 'No circuit data available yet'}
                     </p>
                   </div>
                   <div className="p-3 bg-blue-50 rounded-lg">
@@ -395,33 +395,33 @@ export default function AnalyticsPage() {
                   </thead>
                   <tbody>
                     {analytics.monthlyPerformance.slice(0, 5).map((month) => (
-                      <tr key={tournament.id} className="border-b">
+                      <tr key={month.month} className="border-b">
                         <td className="py-3">
                           <div>
-                            <p className="text-sm font-medium">{tournament.name}</p>
-                            <p className="text-xs text-gray-500">{tournament.venue}, {tournament.city}</p>
+                            <p className="text-sm font-medium">{month.month}</p>
+                            <p className="text-xs text-gray-500">{month.tournamentsPlayed} events played</p>
                           </div>
                         </td>
                         <td className="py-3 text-sm text-gray-600">
-                          {new Date(tournament.date).toLocaleDateString()}
+                          ${month.buyIns.toLocaleString()}
                         </td>
                         <td className="py-3 text-sm font-medium">
-                          ${tournament.buyIn.toLocaleString()}
+                          ${month.winnings.toLocaleString()}
                         </td>
                         <td className="py-3 text-sm text-gray-600">
-                          {tournament.field}
+                          {month.tournamentsPlayed}
                         </td>
                         <td className="py-3 text-sm text-gray-600">
-                          {tournament.finish ? `${tournament.finish}${getOrdinalSuffix(tournament.finish)}` : 'DNF'}
+                          -
                         </td>
                         <td className="py-3 text-sm font-medium">
-                          ${tournament.prize.toLocaleString()}
+                          ${month.winnings.toLocaleString()}
                         </td>
                         <td className="py-3">
                           <span className={`text-sm font-medium ${
-                            tournament.roi >= 0 ? 'text-green-600' : 'text-red-600'
+                            month.profit >= 0 ? 'text-green-600' : 'text-red-600'
                           }`}>
-                            {tournament.roi >= 0 ? '+' : ''}{tournament.roi}%
+                            {month.profit >= 0 ? '+' : ''}${month.profit.toLocaleString()}
                           </span>
                         </td>
                       </tr>
@@ -533,7 +533,7 @@ export default function AnalyticsPage() {
                     </div>
                     
                     <div className="space-y-3">
-                      {analytics.roiOptimization.optimizationSteps.map((step, index) => (
+                      {analytics.roiOptimization.optimizationSteps.map((step: any, index: number) => (
                         <div key={index} className="p-3 bg-gray-50 rounded-lg">
                           <div className="flex justify-between items-start mb-2">
                             <h4 className="text-sm font-medium text-gray-900">{step.action}</h4>
@@ -719,7 +719,7 @@ export default function AnalyticsPage() {
                   <div className="p-4 bg-green-50 rounded-lg">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm text-green-700">Best Travel Month</span>
-                      <span className="font-semibold text-green-800">{bestMonth.month}</span>
+                      <span className="font-semibold text-green-800">{bestMonth?.month || 'N/A'}</span>
                     </div>
                     <div className="text-xs text-green-600">Lowest cost per tournament ratio</div>
                   </div>
@@ -778,7 +778,7 @@ export default function AnalyticsPage() {
                 <h3 className="font-semibold text-gray-900 mb-4">Bankroll History</h3>
                 <div className="space-y-3">
                   {analytics.bankrollAnalytics.history.map((entry, index) => (
-                    <div key={entry.date} className="flex items-center justify-between">
+                    <div key={entry.date.toISOString()} className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">
                         {new Date(entry.date).toLocaleDateString()}
                       </span>
@@ -786,12 +786,12 @@ export default function AnalyticsPage() {
                         <span className="text-sm font-medium">${entry.amount.toLocaleString()}</span>
                         {index > 0 && (
                           <span className={`text-sm ${
-                            entry.amount > mockPlayerData.detailedStats.bankrollHistory[index - 1].amount 
+                            entry.amount > analytics.bankrollAnalytics.history[index - 1].amount 
                               ? 'text-green-600' 
                               : 'text-red-600'
                           }`}>
-                            {entry.amount > mockPlayerData.detailedStats.bankrollHistory[index - 1].amount ? '+' : ''}
-                            {((entry.amount - mockPlayerData.detailedStats.bankrollHistory[index - 1].amount) / 1000).toFixed(1)}k
+                            {entry.amount > analytics.bankrollAnalytics.history[index - 1].amount ? '+' : ''}
+                            {((entry.amount - analytics.bankrollAnalytics.history[index - 1].amount) / 1000).toFixed(1)}k
                           </span>
                         )}
                       </div>
