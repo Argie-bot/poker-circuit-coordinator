@@ -100,6 +100,38 @@ const buyInBrackets = [
   { label: '$5000+', min: 5000, max: 100000 }
 ]
 
+// Brand styling configurations
+const brandStyles = {
+  'World Series of Poker': {
+    primary: 'bg-yellow-500',
+    secondary: 'bg-yellow-100',
+    text: 'text-yellow-900',
+    border: 'border-yellow-200',
+    gradient: 'from-yellow-400 to-yellow-600'
+  },
+  'World Poker Tour': {
+    primary: 'bg-red-600',
+    secondary: 'bg-red-100', 
+    text: 'text-red-900',
+    border: 'border-red-200',
+    gradient: 'from-red-500 to-red-700'
+  },
+  'European Poker Tour': {
+    primary: 'bg-blue-600',
+    secondary: 'bg-blue-100',
+    text: 'text-blue-900', 
+    border: 'border-blue-200',
+    gradient: 'from-blue-500 to-blue-700'
+  },
+  'Regional Circuits': {
+    primary: 'bg-green-600',
+    secondary: 'bg-green-100',
+    text: 'text-green-900',
+    border: 'border-green-200', 
+    gradient: 'from-green-500 to-green-700'
+  }
+}
+
 export default function CircuitBuilderPage() {
   const [selectedTournaments, setSelectedTournaments] = useState<Tournament[]>([])
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
