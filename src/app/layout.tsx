@@ -53,7 +53,7 @@ export default function RootLayout({
       <body className={`${inter.className} h-full antialiased bg-gray-50`}>
         <div id="root" className="h-full flex flex-col">
           <Navigation />
-          <main className="flex-1">
+          <main className="flex-1 pb-20 md:pb-0">
             {children}
           </main>
         </div>

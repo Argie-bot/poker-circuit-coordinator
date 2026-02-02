@@ -76,30 +76,28 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <div className="md:hidden">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {/* Mobile Bottom Tab Bar */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-50">
+        <div className="flex justify-around items-center h-16">
           {navigation.map((item) => {
             const isActive = pathname === item.href
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`flex flex-col items-center justify-center flex-1 h-full px-1 ${
                   isActive
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-500 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'text-primary-600'
+                    : 'text-gray-400 hover:text-primary-600'
                 }`}
               >
-                <div className="flex items-center space-x-2">
-                  <item.icon className="h-5 w-5" />
-                  <span>{item.name}</span>
-                </div>
+                <item.icon className="h-5 w-5" />
+                <span className="text-[10px] mt-1 leading-tight">{item.name}</span>
               </Link>
             )
           })}
         </div>
-      </div>
+      </nav>
     </header>
   )
 }
