@@ -1,11 +1,10 @@
 /**
  * World Poker Tour (WPT) Web Scraper
  * Scrapes WPT tournament schedules and information
+ * Uses fetch() + cheerio for lightweight scraping (no Puppeteer)
  */
 
-import puppeteer, { Browser, Page } from 'puppeteer';
 import * as cheerio from 'cheerio';
-import axios from 'axios';
 import { Tournament, Venue, Circuit, Address } from '@/types';
 
 interface WPTEvent {
@@ -24,63 +23,46 @@ interface WPTEvent {
 
 export class WPTScraper {
   private baseUrl = 'https://www.worldpokertour.com';
-  private browser?: Browser;
   private userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-
-  private async initBrowser(): Promise<Browser> {
-    if (!this.browser) {
-      this.browser = await puppeteer.launch({
-        headless: true,
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage',
-          '--disable-accelerated-2d-canvas',
-          '--disable-gpu',
-          '--window-size=1920x1080'
-        ]
-      });
-    }
-    return this.browser;
-  }
 
   /**
    * Scrape WPT tournament schedule
    */
   async getWPTEvents(): Promise<Tournament[]> {
-    const browser = await this.initBrowser();
-    const page = await browser.newPage();
-    
     try {
-      await page.setUserAgent(this.userAgent);
-      await page.setViewport({ width: 1920, height: 1080 });
-
-      // Navigate to WPT tournament schedule
-      await page.goto(`${this.baseUrl}/tournaments`, {
-        waitUntil: 'networkidle2',
-        timeout: 30000
+      // Try main tournaments page first
+      let response = await fetch(`${this.baseUrl}/tournaments`, {
+        headers: {
+          'User-Agent': this.userAgent,
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'gzip, deflate',
+          'Cache-Control': 'no-cache'
+        },
       });
 
-      // Wait for tournament listings to load
-      await page.waitForSelector('.tournament-card, .event-card, .tour-event', { timeout: 10000 });
+      if (!response.ok) {
+        // Fallback: try alternative schedule page
+        console.warn('Main WPT page failed, trying schedule page');
+        response = await fetch(`${this.baseUrl}/schedule`, {
+          headers: {
+            'User-Agent': this.userAgent,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5'
+          },
+        });
+      }
 
-      const content = await page.content();
+      if (!response.ok) {
+        throw new Error(`WPT fetch failed: ${response.status}`);
+      }
+
+      const content = await response.text();
       return this.parseWPTEvents(content);
 
     } catch (error) {
       console.error('Error scraping WPT events:', error);
-      
-      // Fallback: try alternative schedule page
-      try {
-        await page.goto(`${this.baseUrl}/schedule`, { waitUntil: 'networkidle2' });
-        const content = await page.content();
-        return this.parseWPTEvents(content);
-      } catch (fallbackError) {
-        console.error('Fallback WPT scraping also failed:', fallbackError);
-        return [];
-      }
-    } finally {
-      await page.close();
+      return [];
     }
   }
 
@@ -88,23 +70,25 @@ export class WPTScraper {
    * Scrape specific WPT event details
    */
   async getEventDetails(eventUrl: string): Promise<Tournament | null> {
-    const browser = await this.initBrowser();
-    const page = await browser.newPage();
-    
     try {
-      await page.setUserAgent(this.userAgent);
-      await page.goto(eventUrl, { waitUntil: 'networkidle2' });
+      const response = await fetch(eventUrl, {
+        headers: {
+          'User-Agent': this.userAgent,
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5'
+        },
+      });
 
-      await page.waitForSelector('.event-details, .tournament-info', { timeout: 10000 });
+      if (!response.ok) {
+        throw new Error(`WPT event fetch failed: ${response.status}`);
+      }
 
-      const content = await page.content();
+      const content = await response.text();
       return this.parseEventDetails(content);
 
     } catch (error) {
       console.error('Error scraping WPT event details:', error);
       return null;
-    } finally {
-      await page.close();
     }
   }
 
@@ -479,16 +463,16 @@ export class WPTScraper {
   }
 
   async close(): Promise<void> {
-    if (this.browser) {
-      await this.browser.close();
-      this.browser = undefined;
-    }
+    // No cleanup needed for fetch-based scraping
   }
 
   async checkAvailability(): Promise<boolean> {
     try {
-      const response = await axios.head(this.baseUrl, { timeout: 5000 });
-      return response.status === 200;
+      const response = await fetch(this.baseUrl, {
+        method: 'HEAD',
+        headers: { 'User-Agent': this.userAgent }
+      });
+      return response.ok;
     } catch {
       return false;
     }

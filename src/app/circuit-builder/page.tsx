@@ -30,7 +30,8 @@ import {
   FilterIcon
 } from 'lucide-react'
 import { Tournament, Circuit, Player } from '@/types'
-import { tournaments, circuits } from '@/data/tournaments'
+import { circuits } from '@/data/tournaments'
+import { useTournaments } from '@/hooks/use-tournaments'
 
 // Tournament series interface for grouping
 interface TournamentSeries {
@@ -136,6 +137,19 @@ export default function CircuitBuilderPage() {
   const [gameTypeFilter, setGameTypeFilter] = useState('all')
   const [expandedSeries, setExpandedSeries] = useState<Set<string>>(new Set())
   const [showCircuitPanel, setShowCircuitPanel] = useState(false)
+
+  // Fetch tournaments using the live data hook
+  const {
+    tournaments,
+    meta,
+    loading,
+    error,
+    refetch,
+    refresh
+  } = useTournaments({
+    startDate: new Date(selectedYear, selectedMonth, 1).toISOString().split('T')[0],
+    endDate: new Date(selectedYear, selectedMonth + 1, 0).toISOString().split('T')[0]
+  })
 
   // Group tournaments into series by venue and approximate date range
   const groupedTournaments = useMemo(() => {
@@ -295,6 +309,21 @@ export default function CircuitBuilderPage() {
     setGameTypeFilter('all')
   }
 
+  // Handle month change - refetch data
+  const handleMonthChange = (newMonth: number) => {
+    setSelectedMonth(newMonth)
+    refetch({
+      startDate: new Date(selectedYear, newMonth, 1).toISOString().split('T')[0],
+      endDate: new Date(selectedYear, newMonth + 1, 0).toISOString().split('T')[0]
+    })
+  }
+
+  // Force refresh data
+  const refreshData = () => {
+    // Use the refresh function instead of refetch for force refresh
+    refresh()
+  }
+
   // Calculate circuit summary stats
   const totalBuyIn = selectedEvents.reduce((sum, e) => sum + e.buyIn, 0)
   const averageField = selectedEvents.length > 0 
@@ -365,13 +394,24 @@ export default function CircuitBuilderPage() {
               {/* Month/Year Filter */}
               <select 
                 value={selectedMonth}
-                onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
+                onChange={(e) => handleMonthChange(parseInt(e.target.value))}
                 className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500"
+                disabled={loading}
               >
                 {months.map((month, idx) => (
                   <option key={idx} value={idx}>{month} {selectedYear}</option>
                 ))}
               </select>
+
+              {/* Refresh Button */}
+              <button
+                onClick={refreshData}
+                disabled={loading}
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                title="Refresh tournament data"
+              >
+                {loading ? 'Loading...' : 'Refresh'}
+              </button>
 
               {/* Game Type Filter */}
               <select 
@@ -426,7 +466,29 @@ export default function CircuitBuilderPage() {
 
               {/* Tournament Series List */}
               <div className="divide-y divide-gray-200">
-                {filteredSeries.length === 0 ? (
+                {loading ? (
+                  <div className="px-6 py-12 text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <p className="text-gray-500">Loading tournaments...</p>
+                    {meta && (
+                      <p className="text-xs text-gray-400 mt-2">
+                        Last updated: {new Date(meta.lastUpdated).toLocaleString()}
+                      </p>
+                    )}
+                  </div>
+                ) : error ? (
+                  <div className="px-6 py-12 text-center">
+                    <div className="h-12 w-12 mx-auto mb-4 text-red-400">⚠️</div>
+                    <p className="text-red-600 mb-2">Error loading tournaments</p>
+                    <p className="text-sm text-gray-500 mb-4">{error}</p>
+                    <button
+                      onClick={refreshData}
+                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                    >
+                      Try Again
+                    </button>
+                  </div>
+                ) : filteredSeries.length === 0 ? (
                   <div className="px-6 py-12 text-center">
                     <Trophy className="h-12 w-12 mx-auto mb-4 text-gray-300" />
                     <p className="text-gray-500">No tournaments match your current filters.</p>
@@ -708,6 +770,48 @@ export default function CircuitBuilderPage() {
             )}
           </AnimatePresence>
         </div>
+        
+        {/* Data Source Information */}
+        {meta && (
+          <div className="mt-8 bg-gray-50 rounded-lg p-4 border">
+            <div className="text-sm text-gray-600">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-medium">Live Tournament Data</span>
+                <span className="text-xs">Last updated: {new Date(meta.lastUpdated).toLocaleString()}</span>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                <div className={`p-2 rounded ${meta.sources.cardPlayer.error ? 'bg-red-100' : 'bg-green-100'}`}>
+                  <div className="font-medium">CardPlayer</div>
+                  <div>{meta.sources.cardPlayer.count} events</div>
+                  {meta.sources.cardPlayer.error && (
+                    <div className="text-red-600 text-[10px]">Error</div>
+                  )}
+                </div>
+                <div className={`p-2 rounded ${meta.sources.wsop.error ? 'bg-red-100' : 'bg-green-100'}`}>
+                  <div className="font-medium">WSOP Circuit</div>
+                  <div>{meta.sources.wsop.count} events</div>
+                  {meta.sources.wsop.error && (
+                    <div className="text-red-600 text-[10px]">Error</div>
+                  )}
+                </div>
+                <div className={`p-2 rounded ${meta.sources.wpt.error ? 'bg-red-100' : 'bg-green-100'}`}>
+                  <div className="font-medium">WPT</div>
+                  <div>{meta.sources.wpt.count} events</div>
+                  {meta.sources.wpt.error && (
+                    <div className="text-red-600 text-[10px]">Error</div>
+                  )}
+                </div>
+                <div className={`p-2 rounded ${meta.sources.pokerAtlas.error ? 'bg-red-100' : 'bg-green-100'}`}>
+                  <div className="font-medium">PokerAtlas</div>
+                  <div>{meta.sources.pokerAtlas.count} events</div>
+                  {meta.sources.pokerAtlas.error && (
+                    <div className="text-red-600 text-[10px]">Error</div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

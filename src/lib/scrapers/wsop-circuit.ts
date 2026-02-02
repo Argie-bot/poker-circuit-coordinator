@@ -2,11 +2,10 @@
  * WSOP Circuit Web Scraper
  * Since WSOP doesn't provide a public API, we scrape their website
  * for tournament schedules and information.
+ * Uses fetch() + cheerio for lightweight scraping (no Puppeteer)
  */
 
-import puppeteer, { Browser, Page } from 'puppeteer';
 import * as cheerio from 'cheerio';
-import axios from 'axios';
 import { Tournament, Venue, Circuit, Address } from '@/types';
 
 interface WSOpEvent {
@@ -28,57 +27,34 @@ interface WSOpEvent {
 
 export class WSOpCircuitScraper {
   private baseUrl = 'https://www.wsop.com';
-  private browser?: Browser;
   private userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-
-  /**
-   * Initialize browser for scraping
-   */
-  private async initBrowser(): Promise<Browser> {
-    if (!this.browser) {
-      this.browser = await puppeteer.launch({
-        headless: true,
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage',
-          '--disable-accelerated-2d-canvas',
-          '--disable-gpu',
-          '--window-size=1920x1080'
-        ]
-      });
-    }
-    return this.browser;
-  }
 
   /**
    * Scrape WSOP Circuit events from the main circuit page
    */
   async getCircuitEvents(): Promise<Tournament[]> {
-    const browser = await this.initBrowser();
-    const page = await browser.newPage();
-    
     try {
-      await page.setUserAgent(this.userAgent);
-      await page.setViewport({ width: 1920, height: 1080 });
-
-      // Navigate to WSOP Circuit schedule
-      await page.goto(`${this.baseUrl}/circuits`, {
-        waitUntil: 'networkidle2',
-        timeout: 30000
+      // Fetch the main circuit page
+      const response = await fetch(`${this.baseUrl}/circuits`, {
+        headers: {
+          'User-Agent': this.userAgent,
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'gzip, deflate',
+          'Cache-Control': 'no-cache'
+        },
       });
 
-      // Wait for the schedule to load
-      await page.waitForSelector('.circuit-schedule, .tournament-list, .event-list', { timeout: 10000 });
+      if (!response.ok) {
+        throw new Error(`WSOP fetch failed: ${response.status}`);
+      }
 
-      const content = await page.content();
+      const content = await response.text();
       return this.parseCircuitEvents(content);
 
     } catch (error) {
       console.error('Error scraping WSOP Circuit events:', error);
       return [];
-    } finally {
-      await page.close();
     }
   }
 
@@ -86,23 +62,26 @@ export class WSOpCircuitScraper {
    * Scrape specific circuit stop details
    */
   async getCircuitStopDetails(stopUrl: string): Promise<Tournament[]> {
-    const browser = await this.initBrowser();
-    const page = await browser.newPage();
-    
     try {
-      await page.setUserAgent(this.userAgent);
-      await page.goto(stopUrl, { waitUntil: 'networkidle2' });
+      const response = await fetch(stopUrl, {
+        headers: {
+          'User-Agent': this.userAgent,
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Accept-Encoding': 'gzip, deflate'
+        },
+      });
 
-      await page.waitForSelector('.event-schedule, .tournament-schedule', { timeout: 10000 });
+      if (!response.ok) {
+        throw new Error(`WSOP stop fetch failed: ${response.status}`);
+      }
 
-      const content = await page.content();
+      const content = await response.text();
       return this.parseStopDetails(content);
 
     } catch (error) {
       console.error('Error scraping WSOP Circuit stop details:', error);
       return [];
-    } finally {
-      await page.close();
     }
   }
 
@@ -404,13 +383,10 @@ export class WSOpCircuitScraper {
   }
 
   /**
-   * Clean up browser resources
+   * Clean up resources (no-op for fetch-based scraping)
    */
   async close(): Promise<void> {
-    if (this.browser) {
-      await this.browser.close();
-      this.browser = undefined;
-    }
+    // No cleanup needed for fetch-based scraping
   }
 
   /**
@@ -418,8 +394,11 @@ export class WSOpCircuitScraper {
    */
   async checkAvailability(): Promise<boolean> {
     try {
-      const response = await axios.head(this.baseUrl, { timeout: 5000 });
-      return response.status === 200;
+      const response = await fetch(this.baseUrl, { 
+        method: 'HEAD',
+        headers: { 'User-Agent': this.userAgent }
+      });
+      return response.ok;
     } catch {
       return false;
     }
