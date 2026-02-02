@@ -86,42 +86,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center">
-                <div className="h-8 w-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                  <MapPin className="h-5 w-5 text-white" />
-                </div>
-                <span className="ml-2 text-xl font-bold text-gray-900">Circuit Coordinator</span>
-              </div>
-            </div>
-            
-            <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-gray-900 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-              <a href="/circuit-builder" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Circuits</a>
-              <a href="/coordination" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Travel</a>
-              <a href="/expenses" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Expenses</a>
-              <a href="/bankroll" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Bankroll</a>
-              <a href="/analytics" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Analytics</a>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <button className="text-gray-400 hover:text-gray-500">
-                <Bell className="h-6 w-6" />
-              </button>
-              <button className="text-gray-400 hover:text-gray-500">
-                <Settings className="h-6 w-6" />
-              </button>
-              <div className="h-8 w-8 bg-gray-300 rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {/* Welcome Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -337,7 +302,7 @@ export default function HomePage() {
             </div>
           </motion.div>
         </div>
-      </main>
+      </div>
     </div>
   )
 }

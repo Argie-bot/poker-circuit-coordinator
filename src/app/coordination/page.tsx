@@ -120,25 +120,18 @@ export default function CoordinationPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Group Coordination</h1>
-              <p className="text-gray-600 mt-1">Find roommates, share rides, and coordinate group bookings</p>
-            </div>
-            <button
-              onClick={() => window.history.back()}
-              className="btn-secondary"
-            >
-              Back to Dashboard
-            </button>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Page Header */}
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">Group Coordination</h1>
+            <p className="text-gray-600 mt-1">Find roommates, share rides, and coordinate group bookings</p>
           </div>
+        </div>
 
-          {/* Tabs */}
-          <div className="mt-6">
-            <nav className="flex space-x-8">
+        {/* Tabs */}
+        <div className="mb-6">
+          <nav className="flex space-x-8">
               {[
                 { id: 'my-groups', label: 'My Groups', icon: Users },
                 { id: 'find-groups', label: 'Find Groups', icon: UserPlus },
@@ -158,11 +151,7 @@ export default function CoordinationPage() {
                 </button>
               ))}
             </nav>
-          </div>
         </div>
-      </div>
-
-      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {/* My Groups Tab */}
         {activeTab === 'my-groups' && (
           <motion.div
@@ -563,7 +552,7 @@ export default function CoordinationPage() {
             )}
           </motion.div>
         )}
-      </main>
+      </div>
     </div>
   )
 }

@@ -176,38 +176,33 @@ export default function ExpensesPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="h-8 w-8 bg-green-600 rounded-lg flex items-center justify-center">
-                <Receipt className="h-5 w-5 text-white" />
-              </div>
-              <h1 className="ml-3 text-xl font-bold text-gray-900">Expense Tracker</h1>
+      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        {/* Page Header */}
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center">
+            <div className="h-8 w-8 bg-green-600 rounded-lg flex items-center justify-center">
+              <Receipt className="h-5 w-5 text-white" />
             </div>
-            
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setShowForm(true)}
-                className="btn-secondary flex items-center space-x-2"
-              >
-                <Plus className="h-4 w-4" />
-                <span>Manual Entry</span>
-              </button>
-              <button
-                onClick={() => setShowUpload(true)}
-                className="btn-primary flex items-center space-x-2"
-              >
-                <Camera className="h-4 w-4" />
-                <span>Add Receipt</span>
-              </button>
-            </div>
+            <h1 className="ml-3 text-2xl font-bold text-gray-900">Expense Tracker</h1>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={() => setShowForm(true)}
+              className="btn-secondary flex items-center space-x-2"
+            >
+              <Plus className="h-4 w-4" />
+              <span>Manual Entry</span>
+            </button>
+            <button
+              onClick={() => setShowUpload(true)}
+              className="btn-primary flex items-center space-x-2"
+            >
+              <Camera className="h-4 w-4" />
+              <span>Add Receipt</span>
+            </button>
           </div>
         </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {/* View Toggle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -339,7 +334,7 @@ export default function ExpensesPage() {
           
           {selectedView === 'export' && <TaxExport expenses={expenses} pnlData={mockPnL} />}
         </motion.div>
-      </main>
+      </div>
 
       {/* Photo Upload Modal */}
       {showUpload && (
