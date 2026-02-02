@@ -1,32 +1,5 @@
 {
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_API_URL": "@next_public_api_url",
-    "DATABASE_URL": "@database_url",
-    "NEXTAUTH_SECRET": "@nextauth_secret",
-    "NEXTAUTH_URL": "@nextauth_url"
-  },
-  "build": {
-    "env": {
-      "SKIP_ENV_VALIDATION": "1"
-    }
-  },
-  "functions": {
-    "app/**/*.ts": {
-      "runtime": "nodejs18.x"
-    },
-    "src/pages/api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
-  ]
+  "installCommand": "npm install"
 }
