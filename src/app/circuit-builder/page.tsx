@@ -27,7 +27,9 @@ import {
   Trophy,
   Building,
   MapIcon,
-  FilterIcon
+  FilterIcon,
+  Sparkles,
+  Calendar as CalendarIcon
 } from 'lucide-react'
 import { Tournament, Circuit, Player } from '@/types'
 import { circuits } from '@/data/tournaments'
@@ -95,18 +97,43 @@ const mockPlayer: Player = {
   }
 }
 
-// Brand configurations with colors
+// Brand configurations with enhanced colors
 const brandConfigs = {
-  'all': { name: 'All', color: 'bg-slate-600', textColor: 'text-white' },
-  'wsop': { name: 'WSOP', color: 'bg-gradient-to-r from-yellow-400 to-yellow-600', textColor: 'text-black' },
-  'wpt': { name: 'WPT', color: 'bg-gradient-to-r from-red-500 to-red-600', textColor: 'text-white' },
-  'wsop-circuit': { name: 'WSOP Circuit', color: 'bg-gradient-to-r from-amber-500 to-amber-600', textColor: 'text-black' },
-  'regional': { name: 'Regional', color: 'bg-gradient-to-r from-blue-500 to-blue-600', textColor: 'text-white' }
+  'all': { 
+    name: 'All Circuits', 
+    color: 'bg-gradient-to-r from-slate-600 to-slate-700', 
+    textColor: 'text-white',
+    hoverColor: 'hover:from-slate-700 hover:to-slate-800'
+  },
+  'wsop': { 
+    name: 'WSOP', 
+    color: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500', 
+    textColor: 'text-slate-900 font-bold',
+    hoverColor: 'hover:from-yellow-500 hover:via-yellow-600 hover:to-amber-600'
+  },
+  'wpt': { 
+    name: 'WPT', 
+    color: 'bg-gradient-to-r from-red-500 via-red-600 to-red-700', 
+    textColor: 'text-white font-bold',
+    hoverColor: 'hover:from-red-600 hover:via-red-700 hover:to-red-800'
+  },
+  'wsop-circuit': { 
+    name: 'WSOP Circuit', 
+    color: 'bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500', 
+    textColor: 'text-slate-900 font-bold',
+    hoverColor: 'hover:from-amber-600 hover:via-orange-600 hover:to-yellow-600'
+  },
+  'regional': { 
+    name: 'Regional', 
+    color: 'bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500', 
+    textColor: 'text-white font-bold',
+    hoverColor: 'hover:from-blue-600 hover:via-indigo-600 hover:to-purple-600'
+  }
 }
 
 // Buy-in brackets
 const buyInBrackets = [
-  { label: 'All', min: 0, max: 1000000 },
+  { label: 'All Buy-ins', min: 0, max: 1000000 },
   { label: '$100-500', min: 100, max: 500 },
   { label: '$500-1K', min: 500, max: 1000 },
   { label: '$1K-5K', min: 1000, max: 5000 },
@@ -116,9 +143,9 @@ const buyInBrackets = [
 // Game type options
 const gameTypes = [
   { value: 'all', label: 'All Games' },
-  { value: 'holdem', label: 'Hold\'em' },
+  { value: 'holdem', label: "Hold'em" },
   { value: 'plo', label: 'PLO' },
-  { value: 'mixed', label: 'Mixed' }
+  { value: 'mixed', label: 'Mixed Games' }
 ]
 
 // Month options for filter
@@ -133,7 +160,7 @@ export default function CircuitBuilderPage() {
   const [selectedMonth, setSelectedMonth] = useState<number>(new Date().getMonth())
   const [selectedYear] = useState<number>(new Date().getFullYear())
   const [searchQuery, setSearchQuery] = useState('')
-  const [buyInFilter, setBuyInFilter] = useState('All')
+  const [buyInFilter, setBuyInFilter] = useState('All Buy-ins')
   const [gameTypeFilter, setGameTypeFilter] = useState('all')
   const [expandedSeries, setExpandedSeries] = useState<Set<string>>(new Set())
   const [showCircuitPanel, setShowCircuitPanel] = useState(false)
@@ -243,7 +270,7 @@ export default function CircuitBuilderPage() {
       }
 
       // Buy-in filter
-      if (buyInFilter !== 'All') {
+      if (buyInFilter !== 'All Buy-ins') {
         const bracket = buyInBrackets.find(b => b.label === buyInFilter)
         if (bracket) {
           const hasEventInRange = series.events.some(event => 
@@ -305,7 +332,7 @@ export default function CircuitBuilderPage() {
   const clearAllFilters = () => {
     setSelectedBrand('all')
     setSearchQuery('')
-    setBuyInFilter('All')
+    setBuyInFilter('All Buy-ins')
     setGameTypeFilter('all')
   }
 
@@ -332,92 +359,126 @@ export default function CircuitBuilderPage() {
   const estimatedTravel = selectedEvents.length * 800 // Mock travel cost
   const totalCost = totalBuyIn + estimatedTravel
 
+  // Active filters count
+  const activeFiltersCount = [
+    selectedBrand !== 'all',
+    searchQuery.length > 0,
+    buyInFilter !== 'All Buy-ins',
+    gameTypeFilter !== 'all'
+  ].filter(Boolean).length
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header with brand tabs - CardPlayer style */}
-      <div className="bg-slate-800 border-b border-slate-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-4">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h1 className="text-2xl font-bold text-white">Poker Tournament Schedule</h1>
-                <p className="text-slate-300 text-sm mt-1">
-                  Find and build your perfect poker circuit
-                </p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100">
+      {/* Enhanced Header with CardPlayer-style branding */}
+      <div className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700 shadow-2xl">
+        <div className="absolute inset-0 bg-slate-900 opacity-50" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20c0 0 8-8 8-8l8 8-8 8-8-8zM0 20c0 0 8-8 8-8l8 8-8 8-8-8z'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '40px 40px'
+        }}></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-8">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
+              <div className="mb-4 lg:mb-0">
+                <div className="flex items-center space-x-3">
+                  <div className="p-3 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl shadow-lg">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                      Circuit Builder
+                    </h1>
+                    <p className="text-slate-300 text-lg">
+                      Build your perfect poker tour with AI-powered optimization
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="text-right text-sm text-slate-300">
-                <div>Schedule</div>
-                <div className="text-xs text-slate-400">Showing {months[selectedMonth]} {selectedYear}</div>
+              
+              <div className="text-right">
+                <div className="text-white text-lg font-semibold">
+                  {months[selectedMonth]} {selectedYear}
+                </div>
+                <div className="text-slate-400 text-sm mt-1">
+                  {filteredSeries.length} tournament series found
+                </div>
               </div>
             </div>
             
-            {/* Brand Filter Tabs */}
-            <div className="flex space-x-1 mb-4 overflow-x-auto">
+            {/* Enhanced Brand Filter Tabs */}
+            <div className="flex flex-wrap gap-3 mb-6">
               {Object.entries(brandConfigs).map(([key, config]) => (
-                <button
+                <motion.button
                   key={key}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedBrand(key)}
-                  className={`px-4 py-2 rounded-lg font-semibold text-sm whitespace-nowrap transition-all ${
+                  className={`px-6 py-3 rounded-2xl font-bold text-sm whitespace-nowrap transition-all duration-300 shadow-lg ${
                     selectedBrand === key 
-                      ? `${config.color} ${config.textColor} shadow-lg transform scale-105` 
-                      : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                      ? `${config.color} ${config.textColor} shadow-2xl ring-4 ring-white ring-opacity-30` 
+                      : `bg-slate-700 text-slate-300 hover:bg-slate-600 ${config.hoverColor} hover:shadow-xl`
                   }`}
                 >
                   {config.name}
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Search and Filters Bar */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            {/* Search Bar */}
-            <div className="flex-1 lg:max-w-md">
+      {/* Enhanced Search and Filters Bar */}
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-lg backdrop-blur-sm bg-white/95">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            {/* Enhanced Search Bar */}
+            <div className="flex-1 lg:max-w-lg">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search by series, casino, or location..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Search series, casinos, or locations..."
+                  className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 focus:border-primary-500 transition-all duration-200 text-lg placeholder-gray-400 bg-white shadow-sm"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
             </div>
 
-            {/* Filters */}
-            <div className="flex items-center space-x-4">
+            {/* Enhanced Filters */}
+            <div className="flex flex-wrap items-center gap-3">
               {/* Month/Year Filter */}
-              <select 
-                value={selectedMonth}
-                onChange={(e) => handleMonthChange(parseInt(e.target.value))}
-                className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500"
-                disabled={loading}
-              >
-                {months.map((month, idx) => (
-                  <option key={idx} value={idx}>{month} {selectedYear}</option>
-                ))}
-              </select>
+              <div className="relative">
+                <select 
+                  value={selectedMonth}
+                  onChange={(e) => handleMonthChange(parseInt(e.target.value))}
+                  className="appearance-none border-2 border-gray-200 rounded-xl px-4 py-3 pr-10 text-sm font-medium focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 focus:border-primary-500 bg-white shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={loading}
+                >
+                  {months.map((month, idx) => (
+                    <option key={idx} value={idx}>{month} {selectedYear}</option>
+                  ))}
+                </select>
+                <CalendarIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+              </div>
 
               {/* Refresh Button */}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={refreshData}
                 disabled={loading}
-                className="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-3 border-2 border-gray-200 rounded-xl text-sm font-medium bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm transition-all duration-200 flex items-center space-x-2"
                 title="Refresh tournament data"
               >
-                {loading ? 'Loading...' : 'Refresh'}
-              </button>
+                <Sparkles className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
+                <span>{loading ? 'Loading...' : 'Refresh'}</span>
+              </motion.button>
 
               {/* Game Type Filter */}
               <select 
                 value={gameTypeFilter}
                 onChange={(e) => setGameTypeFilter(e.target.value)}
-                className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500"
+                className="border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 focus:border-primary-500 bg-white shadow-sm cursor-pointer"
               >
                 {gameTypes.map((type) => (
                   <option key={type.value} value={type.value}>{type.label}</option>
@@ -428,7 +489,7 @@ export default function CircuitBuilderPage() {
               <select 
                 value={buyInFilter}
                 onChange={(e) => setBuyInFilter(e.target.value)}
-                className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500"
+                className="border-2 border-gray-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 focus:border-primary-500 bg-white shadow-sm cursor-pointer"
               >
                 {buyInBrackets.map((bracket) => (
                   <option key={bracket.label} value={bracket.label}>{bracket.label}</option>
@@ -436,202 +497,251 @@ export default function CircuitBuilderPage() {
               </select>
 
               {/* Clear Filters */}
-              {(selectedBrand !== 'all' || searchQuery || buyInFilter !== 'All' || gameTypeFilter !== 'all') && (
-                <button
+              {activeFiltersCount > 0 && (
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={clearAllFilters}
-                  className="text-sm text-blue-600 hover:text-blue-700 flex items-center"
+                  className="text-sm text-red-600 hover:text-red-700 font-medium flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-red-50 transition-all duration-200"
                 >
-                  <X className="h-4 w-4 mr-1" />
-                  Clear
-                </button>
+                  <X className="h-4 w-4" />
+                  <span>Clear Filters ({activeFiltersCount})</span>
+                </motion.button>
               )}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Main Tournament Table */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Enhanced Main Tournament Table */}
           <div className="flex-1">
-            <div className="bg-white rounded-lg shadow border border-gray-200 overflow-hidden">
-              {/* Table Header - Desktop */}
-              <div className="hidden md:grid md:grid-cols-6 bg-gray-50 border-b border-gray-200 px-6 py-3 text-sm font-medium text-gray-700">
-                <div>Dates</div>
-                <div className="col-span-2">Series/Event Name</div>
-                <div>Casino</div>
-                <div>Location</div>
-                <div className="text-center">Select</div>
+            <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+              {/* Enhanced Table Header */}
+              <div className="hidden md:grid md:grid-cols-6 bg-gradient-to-r from-slate-50 to-gray-50 border-b border-gray-200 px-8 py-5 text-sm font-bold text-gray-700 uppercase tracking-wide">
+                <div className="flex items-center space-x-2">
+                  <Calendar className="h-4 w-4 text-gray-500" />
+                  <span>Dates</span>
+                </div>
+                <div className="col-span-2 flex items-center space-x-2">
+                  <Trophy className="h-4 w-4 text-gray-500" />
+                  <span>Tournament Series</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Building className="h-4 w-4 text-gray-500" />
+                  <span>Venue</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MapPin className="h-4 w-4 text-gray-500" />
+                  <span>Location</span>
+                </div>
+                <div className="text-center">
+                  <span>Action</span>
+                </div>
               </div>
 
-              {/* Tournament Series List */}
-              <div className="divide-y divide-gray-200">
+              {/* Enhanced Tournament Series List */}
+              <div className="divide-y divide-gray-100">
                 {loading ? (
-                  <div className="px-6 py-12 text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                    <p className="text-gray-500">Loading tournaments...</p>
+                  <div className="px-8 py-16 text-center">
+                    <div className="relative">
+                      <div className="animate-spin rounded-full h-16 w-16 border-4 border-primary-200 border-t-primary-600 mx-auto mb-6"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="h-8 w-8 bg-primary-600 rounded-full animate-pulse"></div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 text-lg font-medium">Loading tournament data...</p>
                     {meta && (
-                      <p className="text-xs text-gray-400 mt-2">
+                      <p className="text-xs text-gray-400 mt-3">
                         Last updated: {new Date(meta.lastUpdated).toLocaleString()}
                       </p>
                     )}
                   </div>
                 ) : error ? (
-                  <div className="px-6 py-12 text-center">
-                    <div className="h-12 w-12 mx-auto mb-4 text-red-400">⚠️</div>
-                    <p className="text-red-600 mb-2">Error loading tournaments</p>
-                    <p className="text-sm text-gray-500 mb-4">{error}</p>
-                    <button
+                  <div className="px-8 py-16 text-center">
+                    <div className="h-16 w-16 mx-auto mb-6 text-red-400 text-6xl">⚠️</div>
+                    <p className="text-red-600 text-lg font-semibold mb-2">Error loading tournaments</p>
+                    <p className="text-sm text-gray-500 mb-6">{error}</p>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={refreshData}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                      className="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 font-semibold shadow-lg transition-all duration-200"
                     >
                       Try Again
-                    </button>
+                    </motion.button>
                   </div>
                 ) : filteredSeries.length === 0 ? (
-                  <div className="px-6 py-12 text-center">
-                    <Trophy className="h-12 w-12 mx-auto mb-4 text-gray-300" />
-                    <p className="text-gray-500">No tournaments match your current filters.</p>
-                    <button
+                  <div className="px-8 py-16 text-center">
+                    <Trophy className="h-16 w-16 mx-auto mb-6 text-gray-300" />
+                    <p className="text-gray-600 text-lg font-medium mb-2">No tournaments found</p>
+                    <p className="text-gray-500 mb-6">Try adjusting your filters or search terms.</p>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={clearAllFilters}
-                      className="mt-2 text-blue-600 hover:text-blue-700 text-sm"
+                      className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-2xl hover:from-blue-600 hover:to-blue-700 font-semibold shadow-lg transition-all duration-200"
                     >
-                      Clear all filters
-                    </button>
+                      Clear All Filters
+                    </motion.button>
                   </div>
                 ) : (
-                  filteredSeries.map((series) => (
-                    <div key={series.id}>
-                      {/* Series Header Row */}
-                      <div className="px-6 py-4 hover:bg-gray-50 cursor-pointer">
-                        <div className="md:grid md:grid-cols-6 md:items-center space-y-3 md:space-y-0">
-                          {/* Dates */}
-                          <div className="flex items-center space-x-2">
-                            <Calendar className="h-4 w-4 text-gray-400 md:hidden" />
+                  filteredSeries.map((series, index) => (
+                    <motion.div 
+                      key={series.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                    >
+                      {/* Enhanced Series Header Row */}
+                      <div className="px-8 py-6 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 cursor-pointer transition-all duration-300 group">
+                        <div className="md:grid md:grid-cols-6 md:items-center space-y-4 md:space-y-0">
+                          {/* Enhanced Dates */}
+                          <div className="flex items-center space-x-3">
+                            <div className="p-2 bg-primary-100 rounded-xl group-hover:bg-primary-200 transition-colors">
+                              <Calendar className="h-5 w-5 text-primary-600" />
+                            </div>
                             <div className="text-sm">
-                              <div className="font-medium text-gray-900">
+                              <div className="font-bold text-gray-900 text-base">
                                 {series.dateRange.start.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                                 {series.dateRange.start.toDateString() !== series.dateRange.end.toDateString() && (
-                                  <span> - {series.dateRange.end.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                                  <span className="text-gray-500"> → {series.dateRange.end.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
                                 )}
                               </div>
-                              <div className="text-gray-500">
+                              <div className="text-gray-500 font-medium">
                                 {series.dateRange.start.getFullYear()}
                               </div>
                             </div>
                           </div>
 
-                          {/* Series Name */}
+                          {/* Enhanced Series Name */}
                           <div className="md:col-span-2">
-                            <div className="flex items-center space-x-2">
-                              <Building className="h-4 w-4 text-gray-400 md:hidden" />
-                              <div>
-                                <div className="font-semibold text-gray-900">{series.name}</div>
-                                <div className="flex items-center space-x-2 mt-1">
-                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                    series.circuit.type === 'wsop' ? 'bg-yellow-100 text-yellow-800' :
-                                    series.circuit.type === 'wpt' ? 'bg-red-100 text-red-800' :
-                                    'bg-blue-100 text-blue-800'
+                            <div className="flex items-start space-x-4">
+                              <div className="flex-1">
+                                <div className="font-bold text-gray-900 text-lg mb-2 group-hover:text-primary-700 transition-colors">
+                                  {series.name}
+                                </div>
+                                <div className="flex flex-wrap items-center gap-2">
+                                  <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-sm ${
+                                    series.circuit.type === 'wsop' ? 'bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-800 border border-yellow-200' :
+                                    series.circuit.type === 'wpt' ? 'bg-gradient-to-r from-red-100 to-pink-100 text-red-800 border border-red-200' :
+                                    'bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 border border-blue-200'
                                   }`}>
                                     {series.circuit.name}
                                   </span>
                                   {series.totalEvents > 1 && (
-                                    <span className="text-xs text-gray-500">
+                                    <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold border border-gray-200">
                                       {series.totalEvents} events
                                     </span>
                                   )}
+                                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold border border-green-200">
+                                    ${series.buyInRange.min.toLocaleString()}
+                                    {series.buyInRange.min !== series.buyInRange.max && 
+                                      ` - $${series.buyInRange.max.toLocaleString()}`}
+                                  </span>
                                 </div>
                               </div>
                             </div>
                           </div>
 
-                          {/* Casino */}
-                          <div className="flex items-center space-x-2">
-                            <Building className="h-4 w-4 text-gray-400 md:hidden" />
-                            <div className="text-sm text-gray-900">{series.venue.name}</div>
+                          {/* Enhanced Casino */}
+                          <div className="flex items-center space-x-3">
+                            <div className="p-2 bg-slate-100 rounded-xl group-hover:bg-slate-200 transition-colors">
+                              <Building className="h-5 w-5 text-slate-600" />
+                            </div>
+                            <div className="text-sm font-semibold text-gray-900">{series.venue.name}</div>
                           </div>
 
-                          {/* Location */}
-                          <div className="flex items-center space-x-2">
-                            <MapPin className="h-4 w-4 text-gray-400 md:hidden" />
-                            <div className="text-sm text-gray-500">{series.location}</div>
+                          {/* Enhanced Location */}
+                          <div className="flex items-center space-x-3">
+                            <div className="p-2 bg-blue-100 rounded-xl group-hover:bg-blue-200 transition-colors">
+                              <MapPin className="h-5 w-5 text-blue-600" />
+                            </div>
+                            <div className="text-sm font-medium text-gray-700">{series.location}</div>
                           </div>
 
-                          {/* Select Button */}
-                          <div className="flex items-center justify-center space-x-2">
-                            <button
+                          {/* Enhanced Select Button */}
+                          <div className="flex items-center justify-center">
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
                               onClick={() => toggleSeriesExpansion(series.id)}
-                              className="flex items-center space-x-1 px-3 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg transition-colors"
+                              className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-sm"
                             >
-                              <span className="text-sm">
-                                {expandedSeries.has(series.id) ? 'Hide' : 'View'} Events
+                              <span>
+                                {expandedSeries.has(series.id) ? 'Hide Events' : 'View Events'}
                               </span>
-                              <ChevronRight className={`h-4 w-4 transition-transform ${
+                              <ChevronRight className={`h-5 w-5 transition-transform duration-300 ${
                                 expandedSeries.has(series.id) ? 'rotate-90' : ''
                               }`} />
-                            </button>
-                          </div>
-                        </div>
-
-                        {/* Buy-in Range - Mobile */}
-                        <div className="mt-2 md:hidden flex items-center space-x-4 text-sm text-gray-600">
-                          <div className="flex items-center space-x-1">
-                            <DollarSign className="h-4 w-4" />
-                            <span>
-                              ${series.buyInRange.min.toLocaleString()}
-                              {series.buyInRange.min !== series.buyInRange.max && 
-                                ` - $${series.buyInRange.max.toLocaleString()}`}
-                            </span>
+                            </motion.button>
                           </div>
                         </div>
                       </div>
 
-                      {/* Expanded Events */}
+                      {/* Enhanced Expanded Events */}
                       <AnimatePresence>
                         {expandedSeries.has(series.id) && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="bg-gray-50 border-t border-gray-200"
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="bg-gradient-to-br from-slate-50 via-gray-50 to-slate-50 border-t border-gray-200"
                           >
-                            <div className="px-6 py-4">
-                              <div className="space-y-3">
-                                {series.events.map((event) => {
+                            <div className="px-8 py-6">
+                              <div className="grid gap-4 md:gap-6">
+                                {series.events.map((event, eventIndex) => {
                                   const isSelected = selectedEvents.some(e => e.id === event.id)
                                   return (
-                                    <div
+                                    <motion.div
                                       key={event.id}
-                                      className={`bg-white rounded-lg border p-4 transition-all ${
+                                      initial={{ opacity: 0, x: -20 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: eventIndex * 0.1 }}
+                                      className={`bg-white rounded-2xl border-2 p-6 transition-all duration-300 hover:shadow-xl ${
                                         isSelected 
-                                          ? 'border-green-300 bg-green-50 ring-2 ring-green-200' 
-                                          : 'border-gray-200 hover:border-gray-300'
+                                          ? 'border-green-300 bg-gradient-to-br from-green-50 to-emerald-50 ring-4 ring-green-100 shadow-lg' 
+                                          : 'border-gray-200 hover:border-primary-300 hover:shadow-lg'
                                       }`}
                                     >
-                                      <div className="flex items-center justify-between">
+                                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                                         <div className="flex-1">
-                                          <div className="flex items-start justify-between mb-2">
-                                            <div>
-                                              <h4 className="font-medium text-gray-900">{event.name}</h4>
-                                              <div className="flex items-center space-x-4 mt-1 text-sm text-gray-600">
-                                                <div className="flex items-center space-x-1">
-                                                  <Calendar className="h-4 w-4" />
-                                                  <span>
-                                                    {event.startDate.toLocaleDateString()} - {event.endDate.toLocaleDateString()}
-                                                  </span>
+                                          <div className="flex items-start justify-between mb-4">
+                                            <div className="flex-1">
+                                              <h4 className="font-bold text-gray-900 text-xl mb-3">{event.name}</h4>
+                                              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                                                <div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-xl">
+                                                  <Calendar className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                                                  <div>
+                                                    <div className="font-semibold text-blue-900">Dates</div>
+                                                    <div className="text-blue-700">
+                                                      {event.startDate.toLocaleDateString()} - {event.endDate.toLocaleDateString()}
+                                                    </div>
+                                                  </div>
                                                 </div>
-                                                <div className="flex items-center space-x-1">
-                                                  <DollarSign className="h-4 w-4" />
-                                                  <span>${event.buyIn.toLocaleString()}</span>
+                                                <div className="flex items-center space-x-2 p-3 bg-green-50 rounded-xl">
+                                                  <DollarSign className="h-5 w-5 text-green-600 flex-shrink-0" />
+                                                  <div>
+                                                    <div className="font-semibold text-green-900">Buy-in</div>
+                                                    <div className="text-green-700 font-bold">${event.buyIn.toLocaleString()}</div>
+                                                  </div>
                                                 </div>
-                                                <div className="flex items-center space-x-1">
-                                                  <Users className="h-4 w-4" />
-                                                  <span>{event.estimatedField} players</span>
+                                                <div className="flex items-center space-x-2 p-3 bg-purple-50 rounded-xl">
+                                                  <Users className="h-5 w-5 text-purple-600 flex-shrink-0" />
+                                                  <div>
+                                                    <div className="font-semibold text-purple-900">Field</div>
+                                                    <div className="text-purple-700 font-bold">{event.estimatedField} players</div>
+                                                  </div>
                                                 </div>
                                                 {event.prizeGuarantee && (
-                                                  <div className="flex items-center space-x-1 text-green-600">
-                                                    <Trophy className="h-4 w-4" />
-                                                    <span>${event.prizeGuarantee.toLocaleString()} GTD</span>
+                                                  <div className="flex items-center space-x-2 p-3 bg-yellow-50 rounded-xl">
+                                                    <Trophy className="h-5 w-5 text-yellow-600 flex-shrink-0" />
+                                                    <div>
+                                                      <div className="font-semibold text-yellow-900">Guarantee</div>
+                                                      <div className="text-yellow-700 font-bold">${event.prizeGuarantee.toLocaleString()}</div>
+                                                    </div>
                                                   </div>
                                                 )}
                                               </div>
@@ -639,29 +749,33 @@ export default function CircuitBuilderPage() {
                                           </div>
                                         </div>
                                         
-                                        {/* Add to Circuit Button */}
-                                        <button
-                                          onClick={() => isSelected ? removeEvent(event.id) : addEvent(event)}
-                                          className={`ml-4 px-4 py-2 rounded-lg font-medium transition-all ${
-                                            isSelected
-                                              ? 'bg-green-600 text-white hover:bg-green-700'
-                                              : 'bg-blue-600 text-white hover:bg-blue-700'
-                                          }`}
-                                        >
-                                          {isSelected ? (
-                                            <div className="flex items-center space-x-2">
-                                              <Check className="h-4 w-4" />
-                                              <span>Added</span>
-                                            </div>
-                                          ) : (
-                                            <div className="flex items-center space-x-2">
-                                              <Plus className="h-4 w-4" />
-                                              <span>Add to Circuit</span>
-                                            </div>
-                                          )}
-                                        </button>
+                                        {/* Enhanced Add to Circuit Button */}
+                                        <div className="flex-shrink-0">
+                                          <motion.button
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            onClick={() => isSelected ? removeEvent(event.id) : addEvent(event)}
+                                            className={`px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-lg ${
+                                              isSelected
+                                                ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600'
+                                                : 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700'
+                                            }`}
+                                          >
+                                            {isSelected ? (
+                                              <div className="flex items-center space-x-3">
+                                                <Check className="h-5 w-5" />
+                                                <span>Added to Circuit</span>
+                                              </div>
+                                            ) : (
+                                              <div className="flex items-center space-x-3">
+                                                <Plus className="h-5 w-5" />
+                                                <span>Add to Circuit</span>
+                                              </div>
+                                            )}
+                                          </motion.button>
+                                        </div>
                                       </div>
-                                    </div>
+                                    </motion.div>
                                   )
                                 })}
                               </div>
@@ -669,100 +783,132 @@ export default function CircuitBuilderPage() {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
+                    </motion.div>
                   ))
                 )}
               </div>
             </div>
           </div>
 
-          {/* Circuit Summary Sidebar */}
+          {/* Enhanced Circuit Summary Sidebar */}
           <AnimatePresence>
             {selectedEvents.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, x: 300 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 300 }}
-                className="lg:w-80"
+                transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
+                className="lg:w-96"
               >
-                <div className="bg-white rounded-lg shadow border border-gray-200 sticky top-24">
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-lg font-semibold text-gray-900">Your Circuit</h3>
-                      <button
+                <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 sticky top-24 overflow-hidden">
+                  <div className="bg-gradient-to-r from-primary-600 to-primary-700 px-8 py-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="p-2 bg-white/20 rounded-xl">
+                          <Target className="h-6 w-6 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-white">Your Circuit</h3>
+                      </div>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                         onClick={() => setSelectedEvents([])}
-                        className="text-gray-400 hover:text-gray-500"
+                        className="p-2 text-white/80 hover:text-white hover:bg-white/20 rounded-xl transition-all"
                       >
                         <X className="h-5 w-5" />
-                      </button>
+                      </motion.button>
+                    </div>
+                  </div>
+
+                  <div className="p-8">
+                    {/* Enhanced Circuit Stats */}
+                    <div className="grid grid-cols-2 gap-6 mb-8">
+                      <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
+                        <div className="text-3xl font-bold text-blue-900 mb-2">{selectedEvents.length}</div>
+                        <div className="text-sm font-semibold text-blue-700">Events Selected</div>
+                      </div>
+                      <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-100">
+                        <div className="text-3xl font-bold text-green-900 mb-2">${totalBuyIn.toLocaleString()}</div>
+                        <div className="text-sm font-semibold text-green-700">Total Buy-ins</div>
+                      </div>
                     </div>
 
-                    {/* Circuit Stats */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-2xl font-bold text-gray-900">{selectedEvents.length}</div>
-                        <div className="text-xs text-gray-600">Events</div>
-                      </div>
-                      <div className="text-center p-3 bg-gray-50 rounded-lg">
-                        <div className="text-2xl font-bold text-green-600">${totalBuyIn.toLocaleString()}</div>
-                        <div className="text-xs text-gray-600">Total Buy-ins</div>
-                      </div>
-                    </div>
-
-                    {/* Selected Events List */}
-                    <div className="space-y-3 mb-6 max-h-64 overflow-y-auto">
-                      {selectedEvents.map((event) => (
-                        <div key={event.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    {/* Enhanced Selected Events List */}
+                    <div className="space-y-4 mb-8 max-h-80 overflow-y-auto custom-scrollbar">
+                      {selectedEvents.map((event, index) => (
+                        <motion.div 
+                          key={event.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.05 }}
+                          className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-slate-50 rounded-2xl border border-gray-200 hover:shadow-md transition-all group"
+                        >
                           <div className="flex-1 min-w-0">
-                            <div className="text-sm font-medium text-gray-900 truncate">
+                            <div className="text-sm font-bold text-gray-900 truncate mb-1">
                               {event.name}
                             </div>
-                            <div className="text-xs text-gray-600 flex items-center space-x-2">
-                              <span>{event.startDate.toLocaleDateString()}</span>
+                            <div className="flex items-center space-x-3 text-xs text-gray-600">
+                              <span className="flex items-center space-x-1">
+                                <Calendar className="h-3 w-3" />
+                                <span>{event.startDate.toLocaleDateString()}</span>
+                              </span>
                               <span>•</span>
-                              <span>${event.buyIn.toLocaleString()}</span>
+                              <span className="flex items-center space-x-1 font-semibold text-green-600">
+                                <DollarSign className="h-3 w-3" />
+                                <span>${event.buyIn.toLocaleString()}</span>
+                              </span>
                             </div>
                           </div>
-                          <button
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                             onClick={() => removeEvent(event.id)}
-                            className="ml-2 p-1 text-gray-400 hover:text-red-600 rounded"
+                            className="ml-3 p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all opacity-0 group-hover:opacity-100"
                           >
                             <X className="h-4 w-4" />
-                          </button>
-                        </div>
+                          </motion.button>
+                        </motion.div>
                       ))}
                     </div>
 
-                    {/* Circuit Summary */}
-                    <div className="border-t border-gray-200 pt-4 space-y-3">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Total Buy-ins:</span>
-                        <span className="font-medium text-gray-900">${totalBuyIn.toLocaleString()}</span>
+                    {/* Enhanced Circuit Summary */}
+                    <div className="border-t-2 border-gray-100 pt-6 space-y-4">
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-gray-600 font-medium">Total Buy-ins:</span>
+                        <span className="font-bold text-gray-900 text-lg">${totalBuyIn.toLocaleString()}</span>
                       </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Est. Travel:</span>
-                        <span className="font-medium text-gray-900">${estimatedTravel.toLocaleString()}</span>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-gray-600 font-medium">Est. Travel:</span>
+                        <span className="font-bold text-gray-900 text-lg">${estimatedTravel.toLocaleString()}</span>
                       </div>
-                      <div className="flex justify-between text-sm border-t border-gray-200 pt-2">
-                        <span className="text-gray-600 font-medium">Total Cost:</span>
-                        <span className="font-bold text-gray-900">${totalCost.toLocaleString()}</span>
+                      <div className="flex justify-between items-center text-base border-t-2 border-gray-200 pt-4">
+                        <span className="text-gray-800 font-bold">Total Investment:</span>
+                        <span className="font-black text-primary-600 text-xl">${totalCost.toLocaleString()}</span>
                       </div>
                     </div>
 
-                    {/* Action Buttons */}
-                    <div className="space-y-3 mt-6">
-                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors">
-                        <div className="flex items-center justify-center space-x-2">
-                          <TrendingUp className="h-4 w-4" />
+                    {/* Enhanced Action Buttons */}
+                    <div className="space-y-4 mt-8">
+                      <motion.button 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-4 px-6 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+                      >
+                        <div className="flex items-center justify-center space-x-3">
+                          <TrendingUp className="h-5 w-5" />
                           <span>Optimize Circuit</span>
                         </div>
-                      </button>
-                      <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-medium transition-colors">
-                        <div className="flex items-center justify-center space-x-2">
-                          <Plane className="h-4 w-4" />
+                      </motion.button>
+                      <motion.button 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white py-4 px-6 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+                      >
+                        <div className="flex items-center justify-center space-x-3">
+                          <Plane className="h-5 w-5" />
                           <span>Plan Travel</span>
                         </div>
-                      </button>
+                      </motion.button>
                     </div>
                   </div>
                 </div>
@@ -771,48 +917,81 @@ export default function CircuitBuilderPage() {
           </AnimatePresence>
         </div>
         
-        {/* Data Source Information */}
+        {/* Enhanced Data Source Information */}
         {meta && (
-          <div className="mt-8 bg-gray-50 rounded-lg p-4 border">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-12 bg-white rounded-3xl p-8 border border-gray-200 shadow-lg"
+          >
             <div className="text-sm text-gray-600">
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-medium">Live Tournament Data</span>
-                <span className="text-xs">Last updated: {new Date(meta.lastUpdated).toLocaleString()}</span>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-green-100 rounded-xl">
+                    <Sparkles className="h-5 w-5 text-green-600" />
+                  </div>
+                  <span className="font-bold text-lg text-gray-900">Live Tournament Data</span>
+                </div>
+                <span className="text-xs bg-gray-100 px-3 py-2 rounded-full font-medium">
+                  Last updated: {new Date(meta.lastUpdated).toLocaleString()}
+                </span>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-                <div className={`p-2 rounded ${meta.sources.cardPlayer.error ? 'bg-red-100' : 'bg-green-100'}`}>
-                  <div className="font-medium">CardPlayer</div>
-                  <div>{meta.sources.cardPlayer.count} events</div>
+                <div className={`p-4 rounded-2xl border-2 transition-all ${meta.sources.cardPlayer.error ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200'}`}>
+                  <div className="font-bold text-gray-900 mb-1">CardPlayer</div>
+                  <div className="text-gray-700 font-semibold">{meta.sources.cardPlayer.count} events</div>
                   {meta.sources.cardPlayer.error && (
-                    <div className="text-red-600 text-[10px]">Error</div>
+                    <div className="text-red-600 text-[10px] mt-1 font-medium">Error</div>
                   )}
                 </div>
-                <div className={`p-2 rounded ${meta.sources.wsop.error ? 'bg-red-100' : 'bg-green-100'}`}>
-                  <div className="font-medium">WSOP Circuit</div>
-                  <div>{meta.sources.wsop.count} events</div>
+                <div className={`p-4 rounded-2xl border-2 transition-all ${meta.sources.wsop.error ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200'}`}>
+                  <div className="font-bold text-gray-900 mb-1">WSOP Circuit</div>
+                  <div className="text-gray-700 font-semibold">{meta.sources.wsop.count} events</div>
                   {meta.sources.wsop.error && (
-                    <div className="text-red-600 text-[10px]">Error</div>
+                    <div className="text-red-600 text-[10px] mt-1 font-medium">Error</div>
                   )}
                 </div>
-                <div className={`p-2 rounded ${meta.sources.wpt.error ? 'bg-red-100' : 'bg-green-100'}`}>
-                  <div className="font-medium">WPT</div>
-                  <div>{meta.sources.wpt.count} events</div>
+                <div className={`p-4 rounded-2xl border-2 transition-all ${meta.sources.wpt.error ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200'}`}>
+                  <div className="font-bold text-gray-900 mb-1">WPT</div>
+                  <div className="text-gray-700 font-semibold">{meta.sources.wpt.count} events</div>
                   {meta.sources.wpt.error && (
-                    <div className="text-red-600 text-[10px]">Error</div>
+                    <div className="text-red-600 text-[10px] mt-1 font-medium">Error</div>
                   )}
                 </div>
-                <div className={`p-2 rounded ${meta.sources.pokerAtlas.error ? 'bg-red-100' : 'bg-green-100'}`}>
-                  <div className="font-medium">PokerAtlas</div>
-                  <div>{meta.sources.pokerAtlas.count} events</div>
+                <div className={`p-4 rounded-2xl border-2 transition-all ${meta.sources.pokerAtlas.error ? 'bg-red-50 border-red-200' : 'bg-green-50 border-green-200'}`}>
+                  <div className="font-bold text-gray-900 mb-1">PokerAtlas</div>
+                  <div className="text-gray-700 font-semibold">{meta.sources.pokerAtlas.count} events</div>
                   {meta.sources.pokerAtlas.error && (
-                    <div className="text-red-600 text-[10px]">Error</div>
+                    <div className="text-red-600 text-[10px] mt-1 font-medium">Error</div>
                   )}
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
+
+      {/* Custom scrollbar styles */}
+      <style jsx>{`
+        .custom-scrollbar {
+          scrollbar-width: thin;
+          scrollbar-color: #cbd5e1 #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #f1f5f9;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #cbd5e1;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #94a3b8;
+        }
+      `}</style>
     </div>
   )
 }
