@@ -203,7 +203,7 @@ export default function CircuitBuilderPage() {
     })
 
     return series.sort((a, b) => a.dateRange.start.getTime() - b.dateRange.start.getTime())
-  }, [])
+  }, [tournaments])
 
   // Filter series based on current filters
   const filteredSeries = useMemo(() => {

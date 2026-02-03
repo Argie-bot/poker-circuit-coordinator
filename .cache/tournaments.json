@@ -1,0 +1,3991 @@
+{
+  "tournaments": [
+    {
+      "id": "cp-2026-l-a--poker-classic-1770089774871",
+      "name": "2026 L.A. Poker Classic",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-commerce-casino",
+        "name": "Commerce Casino",
+        "address": {
+          "street": "",
+          "city": "Commerce",
+          "state": "CA",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.871Z",
+      "endDate": "2026-02-10T03:36:14.871Z",
+      "estimatedField": 933,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-trailblazer-poker-tour-1770089774871",
+      "name": "2026 Trailblazer Poker Tour",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-texas-card-house-houston-houston",
+        "name": "Texas Card House Houston Houston",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.871Z",
+      "endDate": "2026-02-10T03:36:14.871Z",
+      "estimatedField": 647,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-playlive-melbourne-millions-1770089774871",
+      "name": "2026 PlayLive Melbourne Millions",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-playlive-melbourne-south-melbourne",
+        "name": "PlayLive Melbourne South Melbourne",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.871Z",
+      "endDate": "2026-02-10T03:36:14.871Z",
+      "estimatedField": 806,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-mid-atlantic-poker-open-1770089774871",
+      "name": "2026 Mid-Atlantic Poker Open",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-live--casino---hotel",
+        "name": "Live- Casino – Hotel",
+        "address": {
+          "street": "",
+          "city": "Hanover",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.871Z",
+      "endDate": "2026-02-10T03:36:14.871Z",
+      "estimatedField": 885,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-deepstack-showdown--jan-feb--1770089774871",
+      "name": "2026 DeepStack Showdown (Jan/Feb)",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-venetian-hotel-and-casino",
+        "name": "Venetian Hotel and Casino",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.871Z",
+      "endDate": "2026-02-10T03:36:14.871Z",
+      "estimatedField": 651,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-rungood-poker-series---austin-1770089774871",
+      "name": "2026 RunGood Poker Series – Austin",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-the-lodge-card-club--austin-round-rock",
+        "name": "The Lodge Card Club- Austin Round Rock",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.871Z",
+      "endDate": "2026-02-10T03:36:14.871Z",
+      "estimatedField": 993,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-tampa-winter-poker-open-1770089774872",
+      "name": "2026 Tampa Winter Poker Open",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-seminole-hard-rock-casino---tampa-tampa",
+        "name": "Seminole Hard Rock Casino – Tampa Tampa",
+        "address": {
+          "street": "",
+          "city": "Hollywood",
+          "state": "FL",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 998,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wpt---wpt-prime-cambodia-1770089774872",
+      "name": "2026 WPT & WPT Prime Cambodia",
+      "circuit": {
+        "id": "wpt",
+        "name": "World Poker Tour",
+        "organizer": "WPT Enterprises",
+        "type": "wpt",
+        "website": "https://www.worldpokertour.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-nagaworld-integrated-resort",
+        "name": "NagaWorld Integrated Resort",
+        "address": {
+          "street": "",
+          "city": "Phnom Penh",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 817,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wsop-circuit---tunica-1770089774872",
+      "name": "2026 WSOP Circuit – Tunica",
+      "circuit": {
+        "id": "wsop-circuit",
+        "name": "WSOP Circuit",
+        "organizer": "Caesars Entertainment",
+        "type": "wsop",
+        "website": "https://www.wsop.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-horseshoe-casino---hotel-tunica-robinsonville",
+        "name": "Horseshoe Casino – Hotel-Tunica Robinsonville",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 667,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-pokerstars-open-campione-1770089774872",
+      "name": "2026 PokerStars Open Campione",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-casino-campione-campione",
+        "name": "Casino Campione Campione",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 950,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-diamond-poker-championship-1770089774872",
+      "name": "2026 Diamond Poker Championship",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-talking-stick-resort",
+        "name": "Talking Stick Resort",
+        "address": {
+          "street": "",
+          "city": "Scottsdale",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 828,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-utrecht-poker-series-1770089774872",
+      "name": "2026 Utrecht Poker Series",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-holland-casino-utrecht-utrecht",
+        "name": "Holland Casino Utrecht Utrecht",
+        "address": {
+          "street": "",
+          "city": "Utrecht\n                        Utrecht",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 956,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-costa-rica-poker-festival-1770089774872",
+      "name": "2026 Costa Rica Poker Festival",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-sheraton-hotel-san-jose---escazu-san-jose",
+        "name": "Sheraton Hotel San Jose – Escazu San Jose",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 624,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wsop-circuit---florida-1770089774872",
+      "name": "2026 WSOP Circuit – Florida",
+      "circuit": {
+        "id": "wsop-circuit",
+        "name": "WSOP Circuit",
+        "organizer": "Caesars Entertainment",
+        "type": "wsop",
+        "website": "https://www.wsop.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-harrah-s-pompano-beach-pompano-beach",
+        "name": "Harrah-s Pompano Beach Pompano Beach",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 680,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-smart-poker-tour---high-stakes-edition-1770089774872",
+      "name": "2026 Smart Poker Tour – High Stakes Edition",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-monte-casino",
+        "name": "Monte Casino",
+        "address": {
+          "street": "",
+          "city": "Sofia",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 749,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-poker-dream-20---malaysia-1770089774872",
+      "name": "2026 Poker Dream 20 – Malaysia",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-resorts-world-genting---kuala-lumpur-pahang",
+        "name": "Resorts World Genting – Kuala Lumpur Pahang",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 653,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-onyx-high-roller-series-1770089774872",
+      "name": "2026 Onyx High Roller Series",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-merit-royal-hotel---casino",
+        "name": "Merit Royal Hotel – Casino",
+        "address": {
+          "street": "",
+          "city": "Kyrenia",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 979,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-asian-poker-tour---jeju-classic-1770089774872",
+      "name": "2026 Asian Poker Tour – Jeju Classic",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-les-a-casino--formerly-landing-casino-jeju--jeju-do",
+        "name": "LES A Casino (formerly Landing Casino Jeju) Jeju-do",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 989,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-unibet-deepstack-open---aix-en-provence-1770089774872",
+      "name": "2026 Unibet DeepStack Open – Aix-en-Provence",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-pasino-grand---partouche--aix-en-provence--aix-en-provence",
+        "name": "Pasino Grand – Partouche (Aix-en-Provence) Aix-en-provence",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 930,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-swiss-poker-series---aix-les-bains-1770089774872",
+      "name": "2026 Swiss Poker Series – Aix Les Bains",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-casino-grande-cercle--aix-les-bains-aix-les-bains",
+        "name": "Casino Grande Cercle- Aix Les Bains Aix-les-Bains",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.872Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 970,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-southern-poker-shuffle-winter-series-1770089774872",
+      "name": "2026 Southern Poker Shuffle Winter Series",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-caesars-virginia---danville-danville",
+        "name": "Caesars Virginia – Danville Danville",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.872Z",
+      "estimatedField": 840,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-capt-seefeld-1770089774873",
+      "name": "2026 CAPT Seefeld",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-casino-seefeld-triol",
+        "name": "Casino Seefeld Triol",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 872,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-pgt-mixed-games-1770089774873",
+      "name": "2026 PGT Mixed Games",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-aria-pokergo-studio",
+        "name": "ARIA PokerGO Studio",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 624,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-escalator-x-series-1770089774873",
+      "name": "2026 Escalator X Series",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-seminole-hard-rock-hotel---casino-hollywood",
+        "name": "Seminole Hard Rock Hotel – Casino Hollywood",
+        "address": {
+          "street": "",
+          "city": "Hollywood",
+          "state": "FL",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 629,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-winter-poker-open-1770089774873",
+      "name": "2026 Winter Poker Open",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-champions-club-texas-houston",
+        "name": "Champions Club Texas Houston",
+        "address": {
+          "street": "",
+          "city": "Texas\n                        Houston",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 746,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-grosvenor-uk-poker-open-1770089774873",
+      "name": "2026 Grosvenor UK Poker Open",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-grosvenor-casino---coventry-coventry",
+        "name": "Grosvenor Casino – Coventry Coventry",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 602,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-kings-of-tallinn-1770089774873",
+      "name": "2026 Kings of Tallinn",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-olympic-park-casino",
+        "name": "Olympic Park Casino",
+        "address": {
+          "street": "",
+          "city": "Tallinn",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 992,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-blizzard-on-the-beach-1770089774873",
+      "name": "2026 Blizzard on the Beach",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-bestbet-jacksonville-jacksonville",
+        "name": "bestbet Jacksonville Jacksonville",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 602,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-winter-chill-tournament-1770089774873",
+      "name": "2026 Winter Chill Tournament",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-mohegan-sun",
+        "name": "Mohegan Sun",
+        "address": {
+          "street": "",
+          "city": "Uncasville",
+          "state": "CT",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 837,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-the-big-game-bounty-tournament-1770089774873",
+      "name": "2026 The Big Game Bounty Tournament",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-ocean-s-eleven-casino",
+        "name": "Ocean-s Eleven Casino",
+        "address": {
+          "street": "",
+          "city": "Oceanside",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 871,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-cnp-winamax-sevilla-1770089774873",
+      "name": "2026 CNP Winamax Sevilla",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-casino-admiral-sevilla-sevilla",
+        "name": "Casino Admiral Sevilla Sevilla",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 705,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-deepstack-extravaganza-i---wpt-las-vegas-spring-festival-1770089774873",
+      "name": "2026 DeepStack Extravaganza I – WPT Las Vegas Spring Festival",
+      "circuit": {
+        "id": "wpt",
+        "name": "World Poker Tour",
+        "organizer": "WPT Enterprises",
+        "type": "wpt",
+        "website": "https://www.worldpokertour.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-venetian-hotel-and-casino",
+        "name": "Venetian Hotel and Casino",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 902,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-ohio-poker-state-championship-1770089774873",
+      "name": "2026 Ohio Poker State Championship",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-jack-cleveland-casino",
+        "name": "Jack Cleveland Casino",
+        "address": {
+          "street": "",
+          "city": "Cleveland",
+          "state": "OH",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 750,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-italian-series-of-poker---campione-d-italia-1770089774873",
+      "name": "2026 Italian Series of Poker – Campione d’Italia",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-casino-campione-campione",
+        "name": "Casino Campione Campione",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 846,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-potomac-winter-poker-open-1770089774873",
+      "name": "2026 Potomac Winter Poker Open",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-mgm-national-harbor-oxon-hill",
+        "name": "MGM National Harbor Oxon Hill",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 878,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-mixed-games-super-high-roller-bowl-1770089774873",
+      "name": "2026 Mixed Games Super High Roller Bowl",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-aria-pokergo-studio",
+        "name": "ARIA PokerGO Studio",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 685,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wsop-circuit---cherokee--winter--1770089774873",
+      "name": "2026 WSOP Circuit – Cherokee (Winter)",
+      "circuit": {
+        "id": "wsop-circuit",
+        "name": "WSOP Circuit",
+        "organizer": "Caesars Entertainment",
+        "type": "wsop",
+        "website": "https://www.wsop.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-harrah-s-cherokee-cherokee",
+        "name": "Harrah-s Cherokee Cherokee",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 738,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-president-s-day-tournament-1770089774873",
+      "name": "2026 President’s Day Tournament",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-graton-resort---casino",
+        "name": "Graton Resort – Casino",
+        "address": {
+          "street": "",
+          "city": "Rohnert Park",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.873Z",
+      "endDate": "2026-02-10T03:36:14.873Z",
+      "estimatedField": 797,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-trailblazer-poker-tour---dallas-las-colinas-1770089774874",
+      "name": "2026 Trailblazer Poker Tour – Dallas/Las Colinas",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-texas-card-house-dallas-dallas",
+        "name": "Texas Card House Dallas Dallas",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 768,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wynn-millions-1770089774874",
+      "name": "2026 Wynn Millions",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-wynn-las-vegas",
+        "name": "Wynn Las Vegas",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 759,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-presidents-day-tournament-1770089774874",
+      "name": "2026 Presidents Day Tournament",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-ocean-s-eleven-casino",
+        "name": "Ocean-s Eleven Casino",
+        "address": {
+          "street": "",
+          "city": "Oceanside",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 611,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-mspt-club-poker-championship-1770089774874",
+      "name": "2026 MSPT Club Poker Championship",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-potawatomi-hotel---casino",
+        "name": "Potawatomi Hotel – Casino",
+        "address": {
+          "street": "",
+          "city": "Milwaukee",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 692,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-winter-main-event-1770089774874",
+      "name": "2026 Winter Main Event",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-casino-niagara-niagara-falls",
+        "name": "Casino Niagara Niagara Falls",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 905,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-uk-poker-league---luton-1770089774874",
+      "name": "2026 UK Poker League – Luton",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-grosvenor-casino---luton-luton",
+        "name": "Grosvenor Casino – Luton Luton",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 751,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-rungood-poker-series---san-diego-1770089774874",
+      "name": "2026 RunGood Poker Series – San Diego",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-jamul-casino",
+        "name": "Jamul Casino",
+        "address": {
+          "street": "",
+          "city": "Jamul",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 788,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-ept---paris-1770089774874",
+      "name": "2026 EPT – Paris",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-palais-des-congres-de-paris-paris",
+        "name": "Palais des Congres de Paris Paris",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 604,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wsop-circuit---baltimore-1770089774874",
+      "name": "2026 WSOP Circuit – Baltimore",
+      "circuit": {
+        "id": "wsop-circuit",
+        "name": "WSOP Circuit",
+        "organizer": "Caesars Entertainment",
+        "type": "wsop",
+        "website": "https://www.wsop.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-horseshoe-casino-baltimore-baltimore",
+        "name": "Horseshoe Casino Baltimore Baltimore",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 604,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-dublin-poker-festival-1770089774874",
+      "name": "2026 Dublin Poker Festival",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-bonnington-dublin-dublin",
+        "name": "Bonnington Dublin Dublin",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 734,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-colorado-winter-poker-championship-1770089774874",
+      "name": "2026 Colorado Winter Poker Championship",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-bally-s-black-hawk-black-hawk",
+        "name": "Bally-s Black Hawk Black Hawk",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 614,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-parx-bigstax-xxxvii-1770089774874",
+      "name": "2026 Parx BigStax XXXVII",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-parx-casino",
+        "name": "Parx Casino",
+        "address": {
+          "street": "",
+          "city": "Bensalem",
+          "state": "PA",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 604,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-rising-star-series-1770089774874",
+      "name": "2026 Rising Star Series",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-bay-101",
+        "name": "Bay 101",
+        "address": {
+          "street": "",
+          "city": "San Jose",
+          "state": "CA",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 736,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-lodge-winter-championship-series-1770089774874",
+      "name": "2026 Lodge Winter Championship Series",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-the-lodge-card-club--austin-round-rock",
+        "name": "The Lodge Card Club- Austin Round Rock",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 790,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-vamos-poker-tour-rozvadov-1770089774874",
+      "name": "2026 Vamos Poker Tour Rozvadov",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-kings-casino",
+        "name": "Kings Casino",
+        "address": {
+          "street": "",
+          "city": "Rozvadov",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 842,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-the-winter-festival-in-bratislava-1770089774874",
+      "name": "2026 The Winter Festival in Bratislava",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-banco-casino",
+        "name": "Banco Casino",
+        "address": {
+          "street": "",
+          "city": "Bratislava",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 753,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-rungood-poker-series---reno-1770089774874",
+      "name": "2026 RunGood Poker Series – Reno",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-atlantis-casino-resort-spa-reno",
+        "name": "Atlantis Casino Resort Spa Reno",
+        "address": {
+          "street": "",
+          "city": "Spa\n                        Reno",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.874Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 963,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-winter-poker-fest-1770089774874",
+      "name": "2026 Winter Poker Fest",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-canterbury-park-racetrack---card-club",
+        "name": "Canterbury Park Racetrack – Card Club",
+        "address": {
+          "street": "",
+          "city": "Shakopee",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.874Z",
+      "estimatedField": 802,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wpt-prime-cyprus-1770089774875",
+      "name": "2026 WPT Prime Cyprus",
+      "circuit": {
+        "id": "wpt",
+        "name": "World Poker Tour",
+        "organizer": "WPT Enterprises",
+        "type": "wpt",
+        "website": "https://www.worldpokertour.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-chamada-prestige-hotel---casino",
+        "name": "Chamada Prestige Hotel – Casino",
+        "address": {
+          "street": "",
+          "city": "Chamada",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 806,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-players-series---taiwan-championship-1770089774875",
+      "name": "2026 Players Series – Taiwan Championship",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-asia-poker-arena-taipei-city",
+        "name": "Asia Poker Arena Taipei City",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 855,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-deepstack-showdown--march--1770089774875",
+      "name": "2026 DeepStack Showdown (March)",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-venetian-hotel-and-casino",
+        "name": "Venetian Hotel and Casino",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 958,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wsop-circuit---southern-indiana--spring--1770089774875",
+      "name": "2026 WSOP Circuit – Southern Indiana (Spring)",
+      "circuit": {
+        "id": "wsop-circuit",
+        "name": "WSOP Circuit",
+        "organizer": "Caesars Entertainment",
+        "type": "wsop",
+        "website": "https://www.wsop.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-horseshoe-casino---hammond-hammond",
+        "name": "Horseshoe Casino – Hammond Hammond",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 650,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-wsop-international-circuit---liechtenstein-1770089774875",
+      "name": "2026 WSOP International Circuit – Liechtenstein",
+      "circuit": {
+        "id": "wsop-circuit",
+        "name": "WSOP Circuit",
+        "organizer": "Caesars Entertainment",
+        "type": "wsop",
+        "website": "https://www.wsop.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-grand-casino-lichtenstein-gamprin-bendern",
+        "name": "Grand Casino Lichtenstein Gamprin-Bendern",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 745,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-grosvenor-uk-poker-tour---manchester-1770089774875",
+      "name": "2026 Grosvenor UK Poker Tour – Manchester",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-grosvenor-casino---manchester-manchester",
+        "name": "Grosvenor Casino – Manchester Manchester",
+        "address": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 805,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-ark-la-tex-poker-championship-1770089774875",
+      "name": "2026 ARK-LA-TEX Poker Championship",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-horseshoe-casino---hotel---bossier-city-bossier-city",
+        "name": "Horseshoe Casino – Hotel – Bossier City Bossier City",
+        "address": {
+          "street": "",
+          "city": "Las Vegas",
+          "state": "NV",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 646,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    },
+    {
+      "id": "cp-2026-spring-break-power-week-1770089774875",
+      "name": "2026 Spring Break Power Week",
+      "circuit": {
+        "id": "regional",
+        "name": "Regional Tournament",
+        "organizer": "Regional Circuit",
+        "type": "regional",
+        "website": "https://www.cardplayer.com",
+        "seasonStart": "2026-01-01T08:00:00.000Z",
+        "seasonEnd": "2026-12-31T08:00:00.000Z"
+      },
+      "venue": {
+        "id": "cp-playground-poker-club",
+        "name": "Playground Poker Club",
+        "address": {
+          "street": "",
+          "city": "Kahnawake",
+          "state": "",
+          "country": "USA",
+          "postalCode": ""
+        },
+        "coordinates": {
+          "lat": 0,
+          "lng": 0
+        },
+        "amenities": [
+          {
+            "name": "Free WiFi",
+            "available": true
+          },
+          {
+            "name": "Restaurant",
+            "available": true
+          },
+          {
+            "name": "ATM",
+            "available": true
+          }
+        ],
+        "parking": {
+          "available": true,
+          "cost": "free"
+        },
+        "nearbyHotels": [],
+        "localTips": [],
+        "timezone": "America/New_York"
+      },
+      "buyIn": 500,
+      "startDate": "2026-02-03T03:36:14.875Z",
+      "endDate": "2026-02-10T03:36:14.875Z",
+      "estimatedField": 852,
+      "structure": {
+        "type": "reentry",
+        "startingStack": 20000,
+        "blindLevelDuration": 30,
+        "reentryLevels": 8
+      },
+      "blindLevels": 30,
+      "status": "upcoming",
+      "lateRegistrationLevels": 8
+    }
+  ],
+  "lastUpdated": 1770089775128,
+  "sources": {
+    "cardPlayer": {
+      "count": 64,
+      "lastUpdated": 1770089775128
+    },
+    "wsop": {
+      "count": 0,
+      "lastUpdated": 1770089775128
+    },
+    "wpt": {
+      "count": 0,
+      "lastUpdated": 1770089775128
+    },
+    "pokerAtlas": {
+      "count": 0,
+      "lastUpdated": 1770089775128
+    }
+  }
+}

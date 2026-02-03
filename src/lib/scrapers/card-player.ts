@@ -132,14 +132,22 @@ export class CardPlayerScraper {
       if (!dates.start) return null;
 
       // Parse location
-      const location = this.parseLocation(locationText);
+      let location = this.parseLocation(locationText);
+      
+      // Fallback: try to extract city from venue name if location parsing failed
+      if (!location.city && !location.state) {
+        location = this.extractLocationFromVenue(venueName);
+      }
       
       // Parse any additional event details from the row
       const eventDetails = this.parseEventDetails($row);
 
+      // Clean venue name after we have the location
+      const cleanedVenueName = this.cleanVenueName(venueName, location.city);
+
       return {
         seriesName: this.cleanSeriesName(seriesName),
-        venueName: this.cleanVenueName(venueName),
+        venueName: cleanedVenueName,
         city: location.city,
         state: location.state,
         country: location.country,
@@ -304,7 +312,7 @@ export class CardPlayerScraper {
 
     if (parts.length >= 2) {
       city = parts[0];
-      state = parts[1];
+      state = this.normalizeState(parts[1]);
       
       // If there's a third part, it might be country
       if (parts.length >= 3) {
@@ -319,6 +327,150 @@ export class CardPlayerScraper {
     }
 
     return { city, state, country };
+  }
+
+  /**
+   * Extract location from venue name when location column fails
+   */
+  private extractLocationFromVenue(venueName: string): { city: string; state: string; country: string } {
+    if (!venueName) {
+      return { city: '', state: '', country: 'USA' };
+    }
+
+    // Common patterns in venue names like "Commerce Casino Commerce" or "Wynn Las Vegas"
+    const knownVenues: Record<string, { city: string; state: string }> = {
+      'commerce casino': { city: 'Commerce', state: 'CA' },
+      'wynn las vegas': { city: 'Las Vegas', state: 'NV' },
+      'bellagio': { city: 'Las Vegas', state: 'NV' },
+      'aria': { city: 'Las Vegas', state: 'NV' },
+      'venetian': { city: 'Las Vegas', state: 'NV' },
+      'mgm grand': { city: 'Las Vegas', state: 'NV' },
+      'caesars palace': { city: 'Las Vegas', state: 'NV' },
+      'horseshoe': { city: 'Las Vegas', state: 'NV' },
+      'bicycle casino': { city: 'Bell Gardens', state: 'CA' },
+      'commerce': { city: 'Commerce', state: 'CA' },
+      'borgata': { city: 'Atlantic City', state: 'NJ' },
+      'foxwoods': { city: 'Mashantucket', state: 'CT' },
+      'mohegan sun': { city: 'Uncasville', state: 'CT' },
+      'winstar': { city: 'Thackerville', state: 'OK' },
+      'hollywood': { city: 'Hollywood', state: 'FL' },
+      'seminole hard rock': { city: 'Hollywood', state: 'FL' },
+      'bay 101': { city: 'San Jose', state: 'CA' },
+      'parx': { city: 'Bensalem', state: 'PA' }
+    };
+
+    // Try to match venue name
+    const lowerVenue = venueName.toLowerCase();
+    for (const [venue, location] of Object.entries(knownVenues)) {
+      if (lowerVenue.includes(venue)) {
+        return { ...location, country: 'USA' };
+      }
+    }
+
+    // Try to extract city from duplicated patterns like "Commerce Casino Commerce"
+    const words = venueName.split(/\s+/);
+    if (words.length >= 3) {
+      const firstWord = words[0].toLowerCase();
+      const lastWord = words[words.length - 1].toLowerCase();
+      
+      // Check if first and last words are similar (venue name pattern)
+      if (firstWord === lastWord || firstWord.includes(lastWord) || lastWord.includes(firstWord)) {
+        const city = words[0];
+        return {
+          city: city,
+          state: this.guesStateFromCity(city),
+          country: 'USA'
+        };
+      }
+    }
+
+    // Try to extract location from patterns like "Casino Name City"
+    const cityStatePattern = /([A-Za-z\s]+(?:Casino|Resort|Hotel|Club))\s+([A-Za-z\s]+)$/i;
+    const match = venueName.match(cityStatePattern);
+    if (match) {
+      const potentialCity = match[2].trim();
+      return {
+        city: potentialCity,
+        state: this.guesStateFromCity(potentialCity),
+        country: 'USA'
+      };
+    }
+
+    return { city: '', state: '', country: 'USA' };
+  }
+
+  /**
+   * Guess state from city name
+   */
+  private guesStateFromCity(city: string): string {
+    if (!city) return '';
+
+    const cityToState: Record<string, string> = {
+      'commerce': 'CA',
+      'las vegas': 'NV',
+      'atlantic city': 'NJ',
+      'hollywood': 'FL',
+      'san jose': 'CA',
+      'bensalem': 'PA',
+      'uncasville': 'CT',
+      'thackerville': 'OK',
+      'mashantucket': 'CT',
+      'bell gardens': 'CA',
+      'reno': 'NV',
+      'biloxi': 'MS',
+      'new orleans': 'LA',
+      'chicago': 'IL',
+      'detroit': 'MI',
+      'cleveland': 'OH',
+      'baltimore': 'MD',
+      'philadelphia': 'PA',
+      'phoenix': 'AZ',
+      'tampa': 'FL',
+      'miami': 'FL',
+      'seattle': 'WA',
+      'portland': 'OR'
+    };
+
+    const lowerCity = city.toLowerCase();
+    return cityToState[lowerCity] || '';
+  }
+
+  /**
+   * Normalize state name to abbreviation
+   */
+  private normalizeState(state: string): string {
+    if (!state) return '';
+    
+    const stateMap: Record<string, string> = {
+      'california': 'CA', 'nevada': 'NV', 'texas': 'TX', 'florida': 'FL',
+      'new york': 'NY', 'new jersey': 'NJ', 'pennsylvania': 'PA',
+      'illinois': 'IL', 'indiana': 'IN', 'michigan': 'MI', 'ohio': 'OH',
+      'oklahoma': 'OK', 'arizona': 'AZ', 'colorado': 'CO', 'louisiana': 'LA',
+      'maryland': 'MD', 'virginia': 'VA', 'north carolina': 'NC',
+      'south carolina': 'SC', 'georgia': 'GA', 'alabama': 'AL',
+      'tennessee': 'TN', 'kentucky': 'KY', 'mississippi': 'MS',
+      'arkansas': 'AR', 'missouri': 'MO', 'kansas': 'KS', 'nebraska': 'NE',
+      'iowa': 'IA', 'minnesota': 'MN', 'wisconsin': 'WI', 'oregon': 'OR',
+      'washington': 'WA', 'utah': 'UT', 'montana': 'MT', 'wyoming': 'WY',
+      'idaho': 'ID', 'north dakota': 'ND', 'south dakota': 'SD',
+      'west virginia': 'WV', 'delaware': 'DE', 'connecticut': 'CT',
+      'rhode island': 'RI', 'massachusetts': 'MA', 'vermont': 'VT',
+      'new hampshire': 'NH', 'maine': 'ME', 'alaska': 'AK', 'hawaii': 'HI'
+    };
+
+    const normalized = state.toLowerCase().trim();
+    
+    // Return mapped value or check if it's already an abbreviation
+    if (stateMap[normalized]) {
+      return stateMap[normalized];
+    }
+    
+    // If it's already a 2-letter abbreviation, return uppercase
+    if (state.length === 2) {
+      return state.toUpperCase();
+    }
+    
+    return state.trim();
   }
 
   /**
@@ -459,15 +611,33 @@ export class CardPlayerScraper {
   }
 
   /**
-   * Clean venue name
+   * Clean venue name and remove duplicated city names
    */
-  private cleanVenueName(name: string): string {
-    return name
+  private cleanVenueName(name: string, city?: string): string {
+    let cleaned = name
       .replace(/casino/i, 'Casino')
       .replace(/hotel/i, 'Hotel')
       .replace(/resort/i, 'Resort')
       .replace(/\s+/g, ' ')
       .trim();
+
+    // Remove duplicate city names (e.g., "Commerce Casino Commerce" -> "Commerce Casino")
+    if (city) {
+      const cityPattern = new RegExp(`\\s+${city}\\s*$`, 'i');
+      cleaned = cleaned.replace(cityPattern, '');
+      
+      // Also check for patterns like "Commerce / Commerce" or "Commerce - Commerce"
+      const duplicatePattern = new RegExp(`\\s*[/-]\\s*${city}\\s*$`, 'i');
+      cleaned = cleaned.replace(duplicatePattern, '');
+    }
+
+    // Remove common redundant words
+    cleaned = cleaned
+      .replace(/\s+poker\s+room$/i, '')
+      .replace(/\s+card\s+room$/i, '')
+      .trim();
+
+    return cleaned;
   }
 
   /**
